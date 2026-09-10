@@ -1,0 +1,6 @@
+.DS_Store
+*.pyc
+__pycache__/
+.tempmediaStorage/
+目的地婚礼-地点组合备选.md
+HANDOFF.md

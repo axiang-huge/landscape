@@ -1,0 +1,637 @@
+{
+  "梅里雪山 · 飞来寺 / 雾浓顶": {
+    "s": "photos/梅里雪山·飞来寺_雾浓顶_s.jpg",
+    "l": "photos/梅里雪山·飞来寺_雾浓顶_l.jpg",
+    "f": "卡瓦格博 南坡 2016.10.18.jpg"
+  },
+  "冷嘎措 / 子梅垭口": {
+    "s": "photos/冷嘎措_子梅垭口_s.jpg",
+    "l": "photos/冷嘎措_子梅垭口_l.jpg",
+    "f": "Minya Konka Northwest Ridge.JPG"
+  },
+  "珠峰绒布寺 / 大本营": {
+    "s": "photos/珠峰绒布寺_大本营_s.jpg",
+    "l": "photos/珠峰绒布寺_大本营_l.jpg",
+    "f": "Everest North Face toward Base Camp Tibet Luca Galuzzi 2006.jpg"
+  },
+  "索松村 / 直白村": {
+    "s": "photos/索松村_直白村_s.jpg",
+    "l": "photos/索松村_直白村_l.jpg",
+    "f": "Namcha Barwa from the west.jpg"
+  },
+  "稻城亚丁 · 牛奶海 / 五色海": {
+    "s": "photos/稻城亚丁·牛奶海_五色海_s.jpg",
+    "l": "photos/稻城亚丁·牛奶海_五色海_l.jpg",
+    "f": "Sacred mountain Xiannairi Yading Biosphere Reserve.jpg"
+  },
+  "塔县 · 白沙湖 / 金草滩": {
+    "s": "photos/塔县·白沙湖_金草滩_s.jpg",
+    "l": "photos/塔县·白沙湖_金草滩_l.jpg",
+    "f": "Muztagh Ata viewed from Karakoram Highway.jpg"
+  },
+  "赛里木湖": {
+    "s": "photos/赛里木湖_s.jpg",
+    "l": "photos/赛里木湖_l.jpg",
+    "f": "Flowers arround Lake Sailimu, aka Sayram - Flickr - George Lu.jpg"
+  },
+  "敦煌 · 鸣沙山 / 雅丹": {
+    "s": "photos/敦煌·鸣沙山_雅丹_s.jpg",
+    "l": "photos/敦煌·鸣沙山_雅丹_l.jpg",
+    "f": "Crescent Spring.JPG"
+  },
+  "纳木错": {
+    "s": "photos/纳木错_s.jpg",
+    "l": "photos/纳木错_l.jpg",
+    "f": "Namtso Lake P8058609.jpg"
+  },
+  "冈仁波齐": {
+    "s": "photos/冈仁波齐_s.jpg",
+    "l": "photos/冈仁波齐_l.jpg",
+    "f": "Kailash-Barkha.jpg"
+  },
+  "巴丹吉林沙漠": {
+    "s": "photos/巴丹吉林沙漠_s.jpg",
+    "l": "photos/巴丹吉林沙漠_l.jpg",
+    "f": "Small Dunes of Badain Jaran Desert.JPG"
+  },
+  "元阳哈尼梯田": {
+    "s": "photos/元阳哈尼梯田_s.jpg",
+    "l": "photos/元阳哈尼梯田_l.jpg",
+    "f": "Yuanyang Hani Rice Terraces at Sunrise.jpg"
+  },
+  "羊卓雍措": {
+    "s": "photos/羊卓雍措_s.jpg",
+    "l": "photos/羊卓雍措_l.jpg",
+    "f": "Yamdrok Lake (37228713076).jpg"
+  },
+  "然乌湖 + 来古冰川": {
+    "s": "photos/然乌湖+来古冰川_s.jpg",
+    "l": "photos/然乌湖+来古冰川_l.jpg",
+    "f": "Ranwu lake.jpg"
+  },
+  "米堆冰川 / 卡若拉冰川": {
+    "s": "photos/米堆冰川_卡若拉冰川_s.jpg",
+    "l": "photos/米堆冰川_卡若拉冰川_l.jpg",
+    "f": "Tibet Midui Glacier,Autumn colour.jpg"
+  },
+  "巴松措": {
+    "s": "photos/巴松措_s.jpg",
+    "l": "photos/巴松措_l.jpg",
+    "f": "BasumTso-wiki.jpg"
+  },
+  "四姑娘山双桥沟": {
+    "s": "photos/四姑娘山双桥沟_s.jpg",
+    "l": "photos/四姑娘山双桥沟_l.jpg",
+    "f": "Mount Siguniang 2.jpg"
+  },
+  "达古冰川": {
+    "s": "photos/达古冰川_s.jpg",
+    "l": "photos/达古冰川_l.jpg",
+    "f": "Dagu Glacier panoramio61669499.jpg"
+  },
+  "海螺沟冰川": {
+    "s": "photos/海螺沟冰川_s.jpg",
+    "l": "photos/海螺沟冰川_l.jpg",
+    "f": "HailuogouGlacierPanorama.jpg"
+  },
+  "格聂之眼": {
+    "s": "photos/格聂之眼_s.jpg",
+    "l": "photos/格聂之眼_l.jpg",
+    "f": "Mount Genyen 2014.09.16 10-27-17.jpg"
+  },
+  "色达 / 亚青寺": {
+    "s": "photos/色达_亚青寺_s.jpg",
+    "l": "photos/色达_亚青寺_l.jpg",
+    "f": "Larung Gar (Setta, Sedda), Sichuan (22106949845).jpg"
+  },
+  "玉龙雪山 · 牦牛坪 / 云杉坪": {
+    "s": "photos/玉龙雪山·牦牛坪_云杉坪_s.jpg",
+    "l": "photos/玉龙雪山·牦牛坪_云杉坪_l.jpg",
+    "f": "Lijiang Yunnan China Jade-Dragon-Snow-Mountain-01.jpg"
+  },
+  "泸沽湖 · 尼塞 / 小落水": {
+    "s": "photos/泸沽湖·尼塞_小落水_s.jpg",
+    "l": "photos/泸沽湖·尼塞_小落水_l.jpg",
+    "f": "Lugu Lake from Lige Observation Deck (20230930180236).jpg"
+  },
+  "白马雪山垭口": {
+    "s": "photos/白马雪山垭口_s.jpg",
+    "l": "photos/白马雪山垭口_l.jpg",
+    "f": "Baima Snow Mountain Peaks and Alpine Pass.jpg"
+  },
+  "哈巴雪山 / 虎跳峡": {
+    "s": "photos/哈巴雪山_虎跳峡_s.jpg",
+    "l": "photos/哈巴雪山_虎跳峡_l.jpg",
+    "f": "Yunnan China Tiger-Leaping-Gorge-05.jpg"
+  },
+  "东川红土地": {
+    "s": "photos/东川红土地_s.jpg",
+    "l": "photos/东川红土地_l.jpg",
+    "f": "1 dongchuan hongtudi panorama 2018.jpg"
+  },
+  "千湖山 / 石卡雪山": {
+    "s": "photos/千湖山_石卡雪山_s.jpg",
+    "l": "photos/千湖山_石卡雪山_l.jpg",
+    "f": "Shika Snow Mountain Range and Sunlight.jpg"
+  },
+  "老君山 · 九十九龙潭": {
+    "s": "photos/老君山·九十九龙潭_s.jpg",
+    "l": "photos/老君山·九十九龙潭_l.jpg",
+    "f": "Yunnan Laojunshan.jpg"
+  },
+  "丙中洛 / 秋那桶": {
+    "s": "photos/丙中洛_秋那桶_s.jpg",
+    "l": "photos/丙中洛_秋那桶_l.jpg",
+    "f": "First Bend of Nujiang River at Bingzhongluo.jpg"
+  },
+  "禾木 / 白哈巴": {
+    "s": "photos/禾木_白哈巴_s.jpg",
+    "l": "photos/禾木_白哈巴_l.jpg",
+    "f": "Hemu River and Mongolian Village.jpg"
+  },
+  "喀拉库勒湖": {
+    "s": "photos/喀拉库勒湖_s.jpg",
+    "l": "photos/喀拉库勒湖_l.jpg",
+    "f": "Karakul Lake - Muztag Ata, China.jpg"
+  },
+  "那拉提 / 唐布拉 / 库尔德宁": {
+    "s": "photos/那拉提_唐布拉_库尔德宁_s.jpg",
+    "l": "photos/那拉提_唐布拉_库尔德宁_l.jpg",
+    "f": "Nalati Grassland 2.jpg"
+  },
+  "交河故城 / 高昌故城": {
+    "s": "photos/交河故城_高昌故城_s.jpg",
+    "l": "photos/交河故城_高昌故城_l.jpg",
+    "f": "Jiaohe City(Yarkhoto),Turpan,Xinjiang HY5.jpg"
+  },
+  "俄博梁雅丹": {
+    "s": "photos/俄博梁雅丹_s.jpg",
+    "l": "photos/俄博梁雅丹_l.jpg",
+    "f": "Eboliang Yardang Mars Landscape Sunset.jpg"
+  },
+  "察尔汗盐湖": {
+    "s": "photos/察尔汗盐湖_s.jpg",
+    "l": "photos/察尔汗盐湖_l.jpg",
+    "f": "Qarhan Salt Lake Ten-Thousand-Zhang Salt Bridge Aerial.jpg"
+  },
+  "阿尼玛卿": {
+    "s": "photos/阿尼玛卿_s.jpg",
+    "l": "photos/阿尼玛卿_l.jpg",
+    "f": "Amne Machin.jpg"
+  },
+  "拉卜楞寺": {
+    "s": "photos/拉卜楞寺_s.jpg",
+    "l": "photos/拉卜楞寺_l.jpg",
+    "f": "Labrang Monastery Golden Roof and Halls Panorama.jpg"
+  },
+  "嘉峪关 / 玉门关 / 汉长城": {
+    "s": "photos/嘉峪关_玉门关_汉长城_s.jpg",
+    "l": "photos/嘉峪关_玉门关_汉长城_l.jpg",
+    "f": "JiayuguanFort.jpg"
+  },
+  "呼伦贝尔 / 额尔古纳 / 室韦": {
+    "s": "photos/呼伦贝尔_额尔古纳_室韦_s.jpg",
+    "l": "photos/呼伦贝尔_额尔古纳_室韦_l.jpg",
+    "f": "Hulunbuir Grasslands, Inner Mongolia.jpg"
+  },
+  "西夏王陵": {
+    "s": "photos/西夏王陵_s.jpg",
+    "l": "photos/西夏王陵_l.jpg",
+    "f": "Western Xia mausoleums 29.jpg"
+  },
+  "壶口瀑布": {
+    "s": "photos/壶口瀑布_s.jpg",
+    "l": "photos/壶口瀑布_l.jpg",
+    "f": "Hukou Waterfall.jpg"
+  },
+  "华山": {
+    "s": "photos/华山_s.jpg",
+    "l": "photos/华山_l.jpg",
+    "f": "Mount Hua Chess Pavilion and Precipice.jpg"
+  },
+  "万峰林": {
+    "s": "photos/万峰林_s.jpg",
+    "l": "photos/万峰林_l.jpg",
+    "f": "WanFengLin-ShangNaHui2025-08.jpg"
+  },
+  "荔波小七孔": {
+    "s": "photos/荔波小七孔_s.jpg",
+    "l": "photos/荔波小七孔_l.jpg",
+    "f": "Xiaoqikong.JPG"
+  },
+  "武隆天生三桥": {
+    "s": "photos/武隆天生三桥_s.jpg",
+    "l": "photos/武隆天生三桥_l.jpg",
+    "f": "Wulong Karst Three Natural Bridges and Tianfu Outpost.jpg"
+  },
+  "涠洲岛": {
+    "s": "photos/涠洲岛_s.jpg",
+    "l": "photos/涠洲岛_l.jpg",
+    "f": "Weizhou Bay view.jpg"
+  },
+  "德天跨国瀑布": {
+    "s": "photos/德天跨国瀑布_s.jpg",
+    "l": "photos/德天跨国瀑布_l.jpg",
+    "f": "2011 广西 崇左 德天瀑布 - panoramio (6).jpg"
+  },
+  "龙脊梯田": {
+    "s": "photos/龙脊梯田_s.jpg",
+    "l": "photos/龙脊梯田_l.jpg",
+    "f": "Longji Rice Terraces 004.jpg"
+  },
+  "长白山天池": {
+    "s": "photos/长白山天池_s.jpg",
+    "l": "photos/长白山天池_l.jpg",
+    "f": "Heaven lake, Changbai - panoramio.jpg"
+  },
+  "漠河北极村": {
+    "s": "photos/漠河北极村_s.jpg",
+    "l": "photos/漠河北极村_l.jpg",
+    "f": "The Most North Of China (184511827).jpeg"
+  },
+  "罗布泊 / 塔克拉玛干沙漠公路": {
+    "s": "photos/罗布泊_塔克拉玛干沙漠公路_s.jpg",
+    "l": "photos/罗布泊_塔克拉玛干沙漠公路_l.jpg",
+    "f": "Tarim Desert Highway - Desert Scene, Xinjiang, China.jpg"
+  },
+  "张掖七彩丹霞 + 敦煌雅丹": {
+    "s": "photos/张掖七彩丹霞+敦煌雅丹_s.jpg",
+    "l": "photos/张掖七彩丹霞+敦煌雅丹_l.jpg",
+    "f": "Danxia-landform-1562852.jpg"
+  },
+  "稻城亚丁（长线）": {
+    "s": "photos/稻城亚丁（长线）_s.jpg",
+    "l": "photos/稻城亚丁（长线）_l.jpg",
+    "f": "Yading Jampelyang-Yangmaiyong.jpg"
+  },
+  "喀纳斯 / 禾木 / 白哈巴": {
+    "s": "photos/喀纳斯_禾木_白哈巴_s.jpg",
+    "l": "photos/喀纳斯_禾木_白哈巴_l.jpg",
+    "f": "LakeKanas.jpg"
+  },
+  "羊湖 + 普莫雍错": {
+    "s": "photos/羊湖+普莫雍错_s.jpg",
+    "l": "photos/羊湖+普莫雍错_l.jpg",
+    "f": "Yamdrok Lake (37228713076).jpg"
+  },
+  "米堆冰川 / 来古冰川": {
+    "s": "photos/米堆冰川_来古冰川_s.jpg",
+    "l": "photos/米堆冰川_来古冰川_l.jpg",
+    "f": "Tibet Midui Glacier,Autumn colour.jpg"
+  },
+  "珠峰 / 阿里线": {
+    "s": "photos/珠峰_阿里线_s.jpg",
+    "l": "photos/珠峰_阿里线_l.jpg",
+    "f": "20110810 North Face of Everest Tibet China Panoramic.jpg"
+  },
+  "泸沽湖 + 香格里拉": {
+    "s": "photos/泸沽湖+香格里拉_s.jpg",
+    "l": "photos/泸沽湖+香格里拉_l.jpg",
+    "f": "Lugu Lake from Lige Observation Deck (20230930180236).jpg"
+  },
+  "罗平油菜花": {
+    "s": "photos/罗平油菜花_s.jpg",
+    "l": "photos/罗平油菜花_l.jpg",
+    "f": "Luoping - panoramio.jpg"
+  },
+  "普者黑": {
+    "s": "photos/普者黑_s.jpg",
+    "l": "photos/普者黑_l.jpg",
+    "f": "Puzhehei Lake in Qiubei County (3974315868).jpg"
+  },
+  "沙溪 / 诺邓": {
+    "s": "photos/沙溪_诺邓_s.jpg",
+    "l": "photos/沙溪_诺邓_l.jpg",
+    "f": "Shaxi Ancient Town Sideng Street Ancient Stage.jpg"
+  },
+  "交河故城 / 葡萄沟": {
+    "s": "photos/交河故城_葡萄沟_s.jpg",
+    "l": "photos/交河故城_葡萄沟_l.jpg",
+    "f": "Jiaohe - Yarkhoto ruins - 15151474024.jpg"
+  },
+  "青海湖 + 门源": {
+    "s": "photos/青海湖+门源_s.jpg",
+    "l": "photos/青海湖+门源_l.jpg",
+    "f": "Rapeseed at Qinghai Lake.jpg"
+  },
+  "沙坡头 + 黄河宿集": {
+    "s": "photos/沙坡头+黄河宿集_s.jpg",
+    "l": "photos/沙坡头+黄河宿集_l.jpg",
+    "f": "20260809 Shapotou Scenic Area (Desert Area) 02.jpg"
+  },
+  "加榜梯田 + 肇兴侗寨": {
+    "s": "photos/加榜梯田+肇兴侗寨_s.jpg",
+    "l": "photos/加榜梯田+肇兴侗寨_l.jpg",
+    "f": "Zhaoxing Dong Village Drum Towers and Terraces.jpg"
+  },
+  "长白山 + 魔界": {
+    "s": "photos/长白山+魔界_s.jpg",
+    "l": "photos/长白山+魔界_l.jpg",
+    "f": "Paektu-san.jpg"
+  },
+  "漠河 / 北红村": {
+    "s": "photos/漠河_北红村_s.jpg",
+    "l": "photos/漠河_北红村_l.jpg",
+    "f": "Farmhouse, Beihong, Aug 2019.jpg"
+  },
+  "额济纳胡杨林": {
+    "s": "photos/额济纳胡杨林_s.jpg",
+    "l": "photos/额济纳胡杨林_l.jpg",
+    "f": "内蒙古 额济纳 胡杨秋景 - panoramio.jpg"
+  },
+  "木格措 / 红海子": {
+    "s": "photos/木格措_红海子_s.jpg",
+    "l": "photos/木格措_红海子_l.jpg",
+    "f": "木格措-木格措 - panoramio.jpg"
+  },
+  "丹巴 · 中路 / 甲居藏寨": {
+    "s": "photos/丹巴·中路_甲居藏寨_s.jpg",
+    "l": "photos/丹巴·中路_甲居藏寨_l.jpg",
+    "f": "甲居藏寨 -爵士鼓手 - panoramio.jpg"
+  },
+  "若尔盖 · 黄河九曲第一湾": {
+    "s": "photos/若尔盖·黄河九曲第一湾_s.jpg",
+    "l": "photos/若尔盖·黄河九曲第一湾_l.jpg",
+    "f": "First Bend of the Yellow River at Zoige Grassland Sunset.jpg"
+  },
+  "稻城亚丁 · 珍珠海 / 冲古草甸": {
+    "s": "photos/稻城亚丁·珍珠海_冲古草甸_s.jpg",
+    "l": "photos/稻城亚丁·珍珠海_冲古草甸_l.jpg",
+    "f": "仙乃日--珍珠海--Q30023595.jpg"
+  },
+  "腾冲 · 火山 / 银杏村": {
+    "s": "photos/腾冲·火山_银杏村_s.jpg",
+    "l": "photos/腾冲·火山_银杏村_l.jpg",
+    "f": "Tengchong Jiangdong Ancient Ginkgo Village Autumn.jpg"
+  },
+  "纳帕海 / 依拉草原": {
+    "s": "photos/纳帕海_依拉草原_s.jpg",
+    "l": "photos/纳帕海_依拉草原_l.jpg",
+    "f": "Napa Lake and Yila Grassland Wetland Flowers.jpg"
+  },
+  "喀拉峻 / 琼库什台": {
+    "s": "photos/喀拉峻_琼库什台_s.jpg",
+    "l": "photos/喀拉峻_琼库什台_l.jpg",
+    "f": "Xinjiang DSC 0871 (3814434634).jpg"
+  },
+  "昭苏 · 天马场": {
+    "s": "photos/昭苏·天马场_s.jpg",
+    "l": "photos/昭苏·天马场_l.jpg",
+    "f": "Zhaosu Prairie Heavenly Horses of Ili.jpg"
+  },
+  "巴音布鲁克": {
+    "s": "photos/巴音布鲁克_s.jpg",
+    "l": "photos/巴音布鲁克_l.jpg",
+    "f": "Bayan-Bulak-Kaidu.jpg"
+  },
+  "乌尔禾魔鬼城": {
+    "s": "photos/乌尔禾魔鬼城_s.jpg",
+    "l": "photos/乌尔禾魔鬼城_l.jpg",
+    "f": "新疆乌尔禾魔鬼城景观.jpg"
+  },
+  "温宿 / 库车大峡谷": {
+    "s": "photos/温宿_库车大峡谷_s.jpg",
+    "l": "photos/温宿_库车大峡谷_l.jpg",
+    "f": "Kuche Tianshan Mysterious Grand Canyon Red Cliffs.jpg"
+  },
+  "艾丁湖": {
+    "s": "photos/艾丁湖_s.jpg",
+    "l": "photos/艾丁湖_l.jpg",
+    "f": "Ayding Lake Lowest Elevation Aerial Panorama.jpg"
+  },
+  "卓尔山": {
+    "s": "photos/卓尔山_s.jpg",
+    "l": "photos/卓尔山_l.jpg",
+    "f": "卓尔山.jpg"
+  },
+  "茫崖 · 艾肯泉": {
+    "s": "photos/茫崖·艾肯泉_s.jpg",
+    "l": "photos/茫崖·艾肯泉_l.jpg",
+    "f": "Mangya Aiken Spring Eye of the Demon Aerial View.jpg"
+  },
+  "坎布拉 / 贵德": {
+    "s": "photos/坎布拉_贵德_s.jpg",
+    "l": "photos/坎布拉_贵德_l.jpg",
+    "f": "Kanbula National Forest Park Danxia and Turquoise Reservoir.jpg"
+  },
+  "年保玉则": {
+    "s": "photos/年保玉则_s.jpg",
+    "l": "photos/年保玉则_l.jpg",
+    "f": "Nianbaoyuze Fairy Lake and Sacred Peaks Flowers.jpg"
+  },
+  "郎木寺 / 桑科草原": {
+    "s": "photos/郎木寺_桑科草原_s.jpg",
+    "l": "photos/郎木寺_桑科草原_l.jpg",
+    "f": "201208郎木寺 - panoramio (6).jpg"
+  },
+  "阿尔山": {
+    "s": "photos/阿尔山_s.jpg",
+    "l": "photos/阿尔山_l.jpg",
+    "f": "Arxan Tuofengling Tianchi Autumn Forest.jpg"
+  },
+  "沙坡头": {
+    "s": "photos/沙坡头_s.jpg",
+    "l": "photos/沙坡头_l.jpg",
+    "f": "沙坡头, Shapotou, Tengger Desert - panoramio (1).jpg"
+  },
+  "靖边波浪谷 / 雨岔大峡谷": {
+    "s": "photos/靖边波浪谷_雨岔大峡谷_s.jpg",
+    "l": "photos/靖边波浪谷_雨岔大峡谷_l.jpg",
+    "f": "Jingbian Wave Valley Danxia Sandstone Sunset.jpg"
+  },
+  "梵净山 · 红云金顶": {
+    "s": "photos/梵净山·红云金顶_s.jpg",
+    "l": "photos/梵净山·红云金顶_l.jpg",
+    "f": "Fanjingshan Golden Summit at Sunrise.jpg"
+  },
+  "陵水分界洲 / 万宁 / 东方鱼鳞洲": {
+    "s": "photos/陵水分界洲_万宁_东方鱼鳞洲_s.jpg",
+    "l": "photos/陵水分界洲_万宁_东方鱼鳞洲_l.jpg",
+    "f": "分界洲岛风光 - panoramio (7).jpg"
+  },
+  "新都桥 – 塔公 – 墨石公园": {
+    "s": "photos/新都桥–塔公–墨石公园_s.jpg",
+    "l": "photos/新都桥–塔公–墨石公园_l.jpg",
+    "f": "新都桥美景 - Scenary of Xinduqiao Town - 2012.10 - panoramio.jpg"
+  },
+  "塔县金草滩 + 白沙湖 + 石头城": {
+    "s": "photos/塔县金草滩+白沙湖+石头城_s.jpg",
+    "l": "photos/塔县金草滩+白沙湖+石头城_l.jpg",
+    "f": "塔什库尔干石头城 - Taxkorgan Stone City Site - 2015.04 - panoramio.jpg"
+  },
+  "丹巴甲居 / 中路藏寨": {
+    "s": "photos/丹巴甲居_中路藏寨_s.jpg",
+    "l": "photos/丹巴甲居_中路藏寨_l.jpg",
+    "f": "甲居藏寨 -爵士鼓手 - panoramio.jpg"
+  },
+  "毕棚沟": {
+    "s": "photos/毕棚沟_s.jpg",
+    "l": "photos/毕棚沟_l.jpg",
+    "f": "毕棚沟.jpg"
+  },
+  "腾冲银杏村 + 火山": {
+    "s": "photos/腾冲·火山_银杏村_s.jpg",
+    "l": "photos/腾冲·火山_银杏村_l.jpg",
+    "f": "Tengchong Jiangdong Ancient Ginkgo Village Autumn.jpg"
+  },
+  "新都桥 – 塔公草原": {
+    "s": "photos/新都桥–塔公–墨石公园_s.jpg",
+    "l": "photos/新都桥–塔公–墨石公园_l.jpg",
+    "f": "新都桥美景 - Scenary of Xinduqiao Town - 2012.10 - panoramio.jpg"
+  },
+  "沙溪古镇": {
+    "s": "photos/沙溪_诺邓_s.jpg",
+    "l": "photos/沙溪_诺邓_l.jpg",
+    "f": "Shaxi Ancient Town Sideng Street Ancient Stage.jpg"
+  },
+  "加榜梯田": {
+    "s": "photos/加榜梯田+肇兴侗寨_s.jpg",
+    "l": "photos/加榜梯田+肇兴侗寨_l.jpg",
+    "f": "Zhaoxing Dong Village Drum Towers and Terraces.jpg"
+  },
+  "林芝桃花沟 + 索松村": {
+    "s": "photos/索松村_直白村_s.jpg",
+    "l": "photos/索松村_直白村_l.jpg",
+    "f": "Namcha Barwa from the west.jpg"
+  },
+  "昭苏天马场": {
+    "s": "photos/昭苏·天马场_s.jpg",
+    "l": "photos/昭苏·天马场_l.jpg",
+    "f": "Zhaosu Prairie Heavenly Horses of Ili.jpg"
+  },
+  "茫崖艾肯泉 / 俄博梁": {
+    "s": "photos/茫崖·艾肯泉_s.jpg",
+    "l": "photos/茫崖·艾肯泉_l.jpg",
+    "f": "Mangya Aiken Spring Eye of the Demon Aerial View.jpg"
+  },
+  "靖边波浪谷 + 雨岔大峡谷": {
+    "s": "photos/靖边波浪谷_雨岔大峡谷_s.jpg",
+    "l": "photos/靖边波浪谷_雨岔大峡谷_l.jpg",
+    "f": "Jingbian Wave Valley Danxia Sandstone Sunset.jpg"
+  },
+  "武隆天生三桥 / 芙蓉洞": {
+    "s": "photos/武隆天生三桥_s.jpg",
+    "l": "photos/武隆天生三桥_l.jpg",
+    "f": "Wulong Karst Three Natural Bridges and Tianfu Outpost.jpg"
+  },
+  "涠洲岛 + 德天瀑布": {
+    "s": "photos/德天跨国瀑布_s.jpg",
+    "l": "photos/德天跨国瀑布_l.jpg",
+    "f": "2011 广西 崇左 德天瀑布 - panoramio (6).jpg"
+  },
+  "大柴旦翡翠湖": {
+    "s": "photos/大柴旦翡翠湖_s.jpg",
+    "l": "photos/大柴旦翡翠湖_l.jpg",
+    "f": "Dachaidan Emerald Lake Crystal Pools 4K Aerial.jpg"
+  },
+  "大柴旦翡翠湖 + 水上雅丹 + 东台吉乃尔": {
+    "s": "photos/东台吉乃尔湖_s.jpg",
+    "l": "photos/东台吉乃尔湖_l.jpg",
+    "f": "Dongtai Jinai er Tiffany Blue Salt Lake.jpg"
+  },
+  "普莫雍错": {
+    "s": "photos/普莫雍错_s.jpg",
+    "l": "photos/普莫雍错_l.jpg",
+    "f": "Pumayumco Blue Ice Lake Cracks in Winter.jpg"
+  },
+  "扎尕那": {
+    "s": "photos/扎尕那_s.jpg",
+    "l": "photos/扎尕那_l.jpg",
+    "f": "Zhagana Stone Forest Tibetan Village Panorama.jpg"
+  },
+  "扎尕那 + 郎木寺": {
+    "s": "photos/扎尕那_s.jpg",
+    "l": "photos/扎尕那_l.jpg",
+    "f": "Zhagana Stone Forest Tibetan Village Panorama.jpg"
+  },
+  "萨普神山": {
+    "s": "photos/萨普神山_s.jpg",
+    "l": "photos/萨普神山_l.jpg",
+    "f": "Sapu Sacred Glacier Mountain Geometric Peak.jpg"
+  },
+  "佩枯错": {
+    "s": "photos/佩枯错_s.jpg",
+    "l": "photos/佩枯错_l.jpg",
+    "f": "Lake Paiku Deep Blue Water and Plateau Foothills.jpg"
+  },
+  "当惹雍错 / 扎日南木错": {
+    "s": "photos/当惹雍错_扎日南木错_s.jpg",
+    "l": "photos/当惹雍错_扎日南木错_l.jpg",
+    "f": "Tangra Yumco Holy Lake Turquoise Water and Sky.jpg"
+  },
+  "吉隆沟 / 陈塘沟": {
+    "s": "photos/吉隆沟_陈塘沟_s.jpg",
+    "l": "photos/吉隆沟_陈塘沟_l.jpg",
+    "f": "Gyirong Valley Himalayan Snow Peak Road.jpg"
+  },
+  "措卡湖": {
+    "s": "photos/措卡湖_s.jpg",
+    "l": "photos/措卡湖_l.jpg",
+    "f": "Cuoka Lake Emerald Water and Tibetan Monastery Reflection.jpg"
+  },
+  "雨崩 · 神瀑 / 冰湖": {
+    "s": "photos/雨崩·神瀑_冰湖_s.jpg",
+    "l": "photos/雨崩·神瀑_冰湖_l.jpg",
+    "f": "Deqen, Yunnan, China - panoramio (14).jpg"
+  },
+  "平山湖大峡谷": {
+    "s": "photos/平山湖大峡谷_s.jpg",
+    "l": "photos/平山湖大峡谷_l.jpg",
+    "f": "Zhangye Pingshanhu Grand Canyon Sunset Glow.jpg"
+  },
+  "独库公路 + 伊犁环线": {
+    "s": "photos/独库公路+伊犁环线_s.jpg",
+    "l": "photos/独库公路+伊犁环线_l.jpg",
+    "f": "G217 Duku.jpg"
+  },
+  "理塘 / 海子山": {
+    "s": "photos/理塘_海子山_s.jpg",
+    "l": "photos/理塘_海子山_l.jpg",
+    "f": "Litang Ge'nyen 2014.09.16 09-11-25.jpg"
+  },
+  "拉姆拉措": {
+    "s": "photos/拉姆拉措_s.jpg",
+    "l": "photos/拉姆拉措_l.jpg",
+    "f": "Lhamo La-tso Sacred Blue Lake in Mountain Amphitheater.jpg"
+  },
+  "墨石公园 / 八美": {
+    "s": "photos/墨石公园_八美_s.jpg",
+    "l": "photos/墨石公园_八美_l.jpg",
+    "f": "Moshi Park Alien Geological Mylonite Stone Forest.jpg"
+  },
+  "党岭葫芦海": {
+    "s": "photos/党岭葫芦海_s.jpg",
+    "l": "photos/党岭葫芦海_l.jpg",
+    "f": "Dangling Gourd Sea Alpine Lake and Autumn Larches.jpg"
+  },
+  "莲宝叶则": {
+    "s": "photos/莲宝叶则_s.jpg",
+    "l": "photos/莲宝叶则_l.jpg",
+    "f": "Aba County Aba Prefecture Sichuan China.jpg"
+  },
+  "独龙江": {
+    "s": "photos/独龙江_s.jpg",
+    "l": "photos/独龙江_l.jpg",
+    "f": "Dulong River First Bend Whitewater Gorge.jpg"
+  },
+  "可可托海 / 额尔齐斯大峡谷": {
+    "s": "photos/可可托海_额尔齐斯大峡谷_s.jpg",
+    "l": "photos/可可托海_额尔齐斯大峡谷_l.jpg",
+    "f": "Koktokay Irtysh Grand Canyon and Granite Bell Mountain.jpg"
+  },
+  "东台吉乃尔湖": {
+    "s": "photos/东台吉乃尔湖_s.jpg",
+    "l": "photos/东台吉乃尔湖_l.jpg",
+    "f": "Dongtai Jinai er Tiffany Blue Salt Lake.jpg"
+  },
+  "黄河源 · 牛头碑": {
+    "s": "photos/黄河源·牛头碑_s.jpg",
+    "l": "photos/黄河源·牛头碑_l.jpg",
+    "f": "Yellow River Source Ox Head Monument and Sacred Lake.jpg"
+  },
+  "阿拉善 · 通湖草原": {
+    "s": "photos/阿拉善·通湖草原_s.jpg",
+    "l": "photos/阿拉善·通湖草原_l.jpg",
+    "f": "Alxa Tengger Desert Sand Dunes and Curves.jpg"
+  }
+}
