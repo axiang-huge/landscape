@@ -7,184 +7,224 @@
 <title>山高水远皆可期 · 大好河山风光图鉴</title>
 <style>
 :root{
-  --ink:#0d0f13; --ink2:#14171d; --ink3:#191d24; --line:#2c3138;
-  --bone:#ece6dc; --bone2:#a8a196; --bone3:#6f6a62;
-  --red:#c8503c; --red2:#e0705a; --glacier:#7fb8cc; --gold:#d9a441;
-  --bar:56px;
+  --ink:#0b0d11; --ink2:#13161d; --ink3:#181c24; --ink4:#1f242e;
+  --line:rgba(255,255,255,0.08); --line2:rgba(255,255,255,0.16);
+  --bone:#f2ece4; --bone2:#aca59b; --bone3:#756f66;
+  --red:#c8503c; --red2:#e26f58; --red-glow:rgba(200,80,60,0.28);
+  --glacier:#5daec7; --glacier2:#84c7dc; --glacier-glow:rgba(93,174,199,0.25);
+  --gold:#d4a240; --gold2:#f3c25b; --gold-glow:rgba(212,162,64,0.25);
+  --bar:58px; --r-xs:4px; --r-sm:8px; --r-md:12px; --r-lg:16px; --r-full:9999px;
 }
 *{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
 body{background:var(--ink);color:var(--bone);line-height:1.6;overflow-x:hidden;
   font-family:"PingFang SC","Hiragino Sans GB","Microsoft YaHei",-apple-system,sans-serif;
   -webkit-font-smoothing:antialiased}
 .serif{font-family:"Songti SC","STSong","SimSun",serif}
-body::after{content:"";position:fixed;inset:0;pointer-events:none;z-index:9999;opacity:.03;mix-blend-mode:overlay;
+body::after{content:"";position:fixed;inset:0;pointer-events:none;z-index:9999;opacity:.028;mix-blend-mode:overlay;
   background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='4'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)'/%3E%3C/svg%3E")}
 
 /* ---------- hero ---------- */
-.hero{position:relative;padding:clamp(40px,9vw,110px) clamp(18px,5vw,72px) clamp(28px,5vw,60px);
+.hero{position:relative;padding:clamp(44px,9vw,115px) clamp(18px,5vw,72px) clamp(30px,5vw,65px);
   border-bottom:1px solid var(--line);overflow:hidden}
 .hero::before{content:"";position:absolute;inset:0;pointer-events:none;
-  background:radial-gradient(120% 80% at 85% 0%,rgba(200,80,60,.16),transparent 60%),
-             radial-gradient(90% 70% at 10% 100%,rgba(127,184,204,.12),transparent 62%)}
-.eyebrow{position:relative;font-size:10px;letter-spacing:.4em;text-transform:uppercase;color:var(--bone3);margin-bottom:18px}
+  background:radial-gradient(120% 80% at 85% 0%,rgba(200,80,60,.18),transparent 62%),
+             radial-gradient(90% 70% at 10% 100%,rgba(93,174,199,.14),transparent 65%)}
+.eyebrow{position:relative;font-size:10.5px;letter-spacing:.45em;text-transform:uppercase;color:var(--bone3);margin-bottom:18px;display:flex;align-items:center;gap:8px}
+.eyebrow::before{content:"";display:inline-block;width:14px;height:1px;background:var(--gold)}
 h1{position:relative;font-family:"Songti SC","STSong",serif;font-size:clamp(34px,9vw,86px);
-  font-weight:600;line-height:1.04;letter-spacing:.03em;margin-bottom:14px}
-h1 em{font-style:normal;color:var(--red2)}
-.sub{position:relative;max-width:52ch;color:var(--bone2);font-size:14px;line-height:1.8}
+  font-weight:600;line-height:1.06;letter-spacing:.03em;margin-bottom:16px}
+h1 em{font-style:normal;background:linear-gradient(135deg,var(--red2),var(--gold));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.sub{position:relative;max-width:54ch;color:var(--bone2);font-size:14.5px;line-height:1.85}
 .sub b{color:var(--bone);font-weight:500}
-.stats{position:relative;display:flex;flex-wrap:wrap;gap:clamp(18px,5vw,52px);margin-top:26px}
-.stat .n{font-family:"Songti SC",serif;font-size:clamp(24px,6vw,42px);line-height:1}
-.stat .n small{font-size:.42em;color:var(--bone3);margin-left:4px;letter-spacing:.08em}
-.stat .l{font-size:10px;letter-spacing:.2em;color:var(--bone3);margin-top:7px}
+.stats{position:relative;display:flex;flex-wrap:wrap;gap:clamp(20px,5vw,56px);margin-top:30px}
+.stat .n{font-family:"Songti SC",serif;font-size:clamp(26px,6vw,44px);line-height:1;font-weight:600}
+.stat .n small{font-size:.4em;color:var(--bone3);margin-left:4px;letter-spacing:.08em;font-weight:400}
+.stat .l{font-size:10.5px;letter-spacing:.22em;color:var(--bone3);margin-top:8px}
 
 /* ---------- 顶栏 ---------- */
-.bar{position:sticky;top:0;z-index:300;height:var(--bar);display:flex;align-items:center;gap:8px;
-  padding:0 clamp(12px,4vw,72px);background:rgba(13,15,19,.9);backdrop-filter:blur(18px) saturate(150%);
+.bar{position:sticky;top:0;z-index:300;height:var(--bar);display:flex;align-items:center;gap:10px;
+  padding:0 clamp(12px,4vw,72px);background:rgba(11,13,17,.88);backdrop-filter:blur(20px) saturate(160%);
   border-bottom:1px solid var(--line)}
-.seg{display:flex;border:1px solid var(--line);border-radius:3px;overflow:hidden;flex:none}
-.seg button{font:inherit;font-size:12.5px;padding:6px 14px;background:transparent;color:var(--bone2);
-  border:0;cursor:pointer;transition:.16s;white-space:nowrap}
-.seg button.on{background:var(--bone);color:var(--ink);font-weight:500}
-.fbtn{font:inherit;font-size:12.5px;padding:6px 13px;border:1px solid var(--line);border-radius:3px;
-  background:transparent;color:var(--bone2);cursor:pointer;display:flex;align-items:center;gap:6px;transition:.16s}
-.fbtn:hover{border-color:var(--bone3);color:var(--bone)}
-.fbtn.act{border-color:var(--red);color:var(--red2)}
-.fbtn .dot{width:15px;height:15px;border-radius:50%;background:var(--red);color:#fff;font-size:9.5px;
+.seg{display:flex;border:1px solid var(--line);border-radius:var(--r-sm);overflow:hidden;flex:none;background:rgba(255,255,255,.02)}
+.seg button{font:inherit;font-size:13px;padding:6px 15px;background:transparent;color:var(--bone2);
+  border:0;cursor:pointer;transition:.18s;white-space:nowrap}
+.seg button.on{background:var(--bone);color:var(--ink);font-weight:600;box-shadow:0 2px 8px rgba(255,255,255,.15)}
+.fbtn{font:inherit;font-size:13px;padding:6px 14px;border:1px solid var(--line);border-radius:var(--r-full);
+  background:rgba(255,255,255,.02);color:var(--bone2);cursor:pointer;display:flex;align-items:center;gap:6px;transition:.18s}
+.fbtn:hover{border-color:var(--line2);color:var(--bone);background:rgba(255,255,255,.05)}
+.fbtn.act{border-color:var(--red);color:var(--red2);background:rgba(200,80,60,.08)}
+.fbtn .dot{width:16px;height:16px;border-radius:50%;background:var(--red);color:#fff;font-size:10px;
   display:none;align-items:center;justify-content:center;font-weight:600}
 .fbtn.act .dot{display:flex}
-.cnt{font-size:11.5px;color:var(--bone3);letter-spacing:.06em;flex:none}
+.cnt{font-size:12px;color:var(--bone3);letter-spacing:.06em;flex:none}
 .search{flex:1;min-width:0;position:relative;display:flex;align-items:center}
-.search input{width:100%;font:inherit;font-size:13px;padding:7px 30px 7px 30px;border-radius:3px;
-  border:1px solid var(--line);background:rgba(255,255,255,.03);color:var(--bone);outline:0;transition:.16s}
+.search input{width:100%;font:inherit;font-size:13px;padding:7px 32px 7px 34px;border-radius:var(--r-full);
+  border:1px solid var(--line);background:rgba(255,255,255,.03);color:var(--bone);outline:0;transition:.2s}
 .search input::placeholder{color:var(--bone3)}
-.search input:focus{border-color:var(--bone3);background:rgba(255,255,255,.06)}
-.search::before{content:"";position:absolute;left:10px;width:11px;height:11px;border-radius:50%;
+.search input:focus{border-color:var(--line2);background:rgba(255,255,255,.06);box-shadow:0 0 0 3px rgba(255,255,255,.04)}
+.search::before{content:"";position:absolute;left:12px;width:12px;height:12px;border-radius:50%;
   border:1.5px solid var(--bone3);pointer-events:none}
-.search .x{position:absolute;right:6px;width:20px;height:20px;border:0;background:0;color:var(--bone3);
-  cursor:pointer;font-size:15px;line-height:1;display:none}
+.search .x{position:absolute;right:8px;width:22px;height:22px;border:0;background:0;color:var(--bone3);
+  cursor:pointer;font-size:16px;line-height:1;display:none}
 .search.has .x{display:block}
-@media(max-width:780px){.bar .search,.bar .cnt{display:none}}
 .fbtn.pick{margin-left:auto}
-.fbtn.pick b{color:var(--gold);font-weight:600}
-.fbtn.pick.has{border-color:rgba(217,164,65,.5)}
+.fbtn.pick b{color:var(--gold);font-weight:600;margin-left:2px}
+.fbtn.pick.has{border-color:rgba(212,162,64,.5);background:rgba(212,162,64,.08)}
+
+/* 移动端搜索按钮与展开行 */
+.m-search-btn{display:none;width:34px;height:34px;border-radius:50%;border:1px solid var(--line);
+  background:transparent;color:var(--bone2);cursor:pointer;align-items:center;justify-content:center;transition:.18s}
+.m-search-btn:hover{color:var(--bone);border-color:var(--line2)}
+.m-search-row{display:none;padding:8px clamp(12px,4vw,72px);background:var(--ink2);border-bottom:1px solid var(--line);
+  position:sticky;top:var(--bar);z-index:295}
+.m-search-row.open{display:flex}
+@media(max-width:780px){
+  .bar .search,.bar .cnt{display:none}
+  .m-search-btn{display:flex}
+  .fbtn.pick{margin-left:0}
+}
+
+/* ---------- 快捷场景胶囊栏 ---------- */
+.pills-bar{position:sticky;top:var(--bar);z-index:290;background:rgba(11,13,17,.85);
+  backdrop-filter:blur(18px) saturate(140%);border-bottom:1px solid var(--line);
+  padding:9px clamp(12px,4vw,72px);overflow-x:auto;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+.pills-bar::-webkit-scrollbar{display:none}
+.pills-inner{display:flex;align-items:center;gap:8px;width:max-content}
+.pill-btn{font:inherit;font-size:12px;padding:5px 14px;border-radius:var(--r-full);
+  border:1px solid var(--line);background:rgba(255,255,255,.025);color:var(--bone2);
+  cursor:pointer;transition:all .18s ease;display:inline-flex;align-items:center;gap:5px;white-space:nowrap}
+.pill-btn:hover{border-color:var(--line2);color:var(--bone);background:rgba(255,255,255,.06)}
+.pill-btn.act{background:var(--bone);color:var(--ink);border-color:var(--bone);font-weight:600;
+  box-shadow:0 2px 10px rgba(255,255,255,.14)}
+.pill-btn.pill-reset{border-color:rgba(200,80,60,.35);color:var(--red2);background:rgba(200,80,60,.08)}
+.pill-btn.pill-reset:hover{background:var(--red);color:#fff;border-color:var(--red)}
+
 /* 收藏星标 */
-.star{position:absolute;top:6px;right:6px;z-index:4;width:28px;height:28px;border-radius:50%;
-  border:0;background:rgba(13,15,19,.5);backdrop-filter:blur(6px);cursor:pointer;
-  display:flex;align-items:center;justify-content:center;transition:.18s;padding:0}
-.star svg{width:16px;height:16px;fill:none;stroke:#fff;stroke-width:1.7;transition:.18s;
-  filter:drop-shadow(0 1px 3px rgba(0,0,0,.9))}
-.star:hover{background:rgba(13,15,19,.85)}
-.star:hover svg{stroke:var(--gold)}
+.star{position:absolute;top:8px;right:8px;z-index:4;width:32px;height:32px;border-radius:50%;
+  border:1px solid rgba(255,255,255,.1);background:rgba(11,13,17,.6);backdrop-filter:blur(8px);
+  cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .2s ease;padding:0}
+.star svg{width:17px;height:17px;fill:none;stroke:#fff;stroke-width:1.8;transition:all .2s ease;
+  filter:drop-shadow(0 1px 3px rgba(0,0,0,.85))}
+.star:hover{background:rgba(11,13,17,.9);border-color:rgba(255,255,255,.25);transform:scale(1.08)}
+.star:hover svg{stroke:var(--gold2)}
 .star.on svg{fill:var(--gold);stroke:var(--gold)}
-.star.on{background:rgba(13,15,19,.75)}
-.metarow{display:flex;gap:7px;align-items:center;flex-wrap:wrap;margin-top:10px}
-.pv2{font-size:10px;letter-spacing:.12em;color:var(--bone2);border:1px solid var(--line);padding:2px 7px;border-radius:2px}
+.star.on{background:rgba(11,13,17,.8);border-color:rgba(212,162,64,.45)}
+.metarow{display:flex;gap:7px;align-items:center;flex-wrap:wrap;margin-top:12px}
+.pv2{font-size:10.5px;letter-spacing:.1em;color:var(--bone2);border:1px solid var(--line);
+  background:rgba(255,255,255,.02);padding:2.5px 8px;border-radius:var(--r-xs)}
+
 /* 候选面板 */
 .picks{padding:0 18px 18px}
-.pgrp{margin-top:16px}
-.pgrp h4{font-size:10px;letter-spacing:.22em;color:var(--bone3);margin-bottom:10px}
-.prow{display:flex;align-items:center;gap:10px;padding:8px 0;border-bottom:1px solid var(--line);cursor:pointer}
+.pgrp{margin-top:18px}
+.pgrp h4{font-size:10.5px;letter-spacing:.22em;color:var(--bone3);margin-bottom:12px}
+.prow{display:flex;align-items:center;gap:12px;padding:10px 0;border-bottom:1px solid var(--line);cursor:pointer;transition:background .15s}
 .prow:last-child{border-bottom:0}
-.prow .th{width:56px;height:36px;border-radius:2px;overflow:hidden;flex:none;background:#0a0c0f;position:relative}
+.prow:hover{background:rgba(255,255,255,.02)}
+.prow .th{width:60px;height:40px;border-radius:var(--r-xs);overflow:hidden;flex:none;background:#0a0c0f;position:relative}
 .prow .th img,.prow .th svg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
 .prow .tt{flex:1;min-width:0}
-.prow .tt b{display:block;font-family:"Songti SC",serif;font-size:14px;font-weight:600;
+.prow .tt b{display:block;font-family:"Songti SC",serif;font-size:14.5px;font-weight:600;
   white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.prow .tt span{font-size:10.5px;color:var(--bone3);letter-spacing:.06em}
-.prow .rm{width:26px;height:26px;border:0;background:0;color:var(--bone3);cursor:pointer;font-size:15px;flex:none}
-.prow .rm:hover{color:var(--red2)}
-.pempty{font-size:12.5px;color:var(--bone3);line-height:1.8;padding:6px 0}
-.ptip{margin-top:18px;padding:12px 14px;border:1px solid rgba(217,164,65,.3);border-radius:3px;
-  background:rgba(217,164,65,.05);font-size:12px;line-height:1.75;color:var(--bone2)}
+.prow .tt span{font-size:11px;color:var(--bone3);letter-spacing:.05em}
+.prow .rm{width:28px;height:28px;border:0;background:0;color:var(--bone3);cursor:pointer;font-size:16px;flex:none;border-radius:50%}
+.prow .rm:hover{color:var(--red2);background:rgba(200,80,60,.1)}
+.pempty{font-size:13px;color:var(--bone3);line-height:1.8;padding:10px 0}
+.ptip{margin-top:18px;padding:14px 16px;border:1px solid rgba(212,162,64,.3);border-radius:var(--r-sm);
+  background:rgba(212,162,64,.06);font-size:12.5px;line-height:1.8;color:var(--bone2)}
 .ptip b{color:var(--gold);font-weight:500}
+
 /* 回到顶部 */
-#top{position:fixed;right:14px;bottom:calc(16px + env(safe-area-inset-bottom));z-index:250;
-  width:40px;height:40px;border-radius:50%;border:1px solid var(--line);background:rgba(20,24,31,.9);
-  backdrop-filter:blur(8px);color:var(--bone);font-size:15px;cursor:pointer;opacity:0;pointer-events:none;
-  transition:.25s}
+#top{position:fixed;right:18px;bottom:calc(20px + env(safe-area-inset-bottom));z-index:250;
+  width:42px;height:42px;border-radius:50%;border:1px solid var(--line2);background:rgba(19,23,30,.88);
+  backdrop-filter:blur(10px);color:var(--bone);font-size:16px;cursor:pointer;opacity:0;pointer-events:none;
+  transition:all .25s ease;display:flex;align-items:center;justify-content:center;box-shadow:0 6px 20px rgba(0,0,0,.45)}
 #top.on{opacity:1;pointer-events:auto}
-#top:hover{background:var(--red);border-color:var(--red);color:#fff}
+#top:hover{background:var(--red);border-color:var(--red);color:#fff;transform:translateY(-2px)}
 
 /* ---------- 筛选抽屉 ---------- */
-.scrim{position:fixed;inset:0;z-index:390;background:rgba(6,7,9,.7);backdrop-filter:blur(4px);
+.scrim{position:fixed;inset:0;z-index:390;background:rgba(6,8,11,.75);backdrop-filter:blur(6px);
   opacity:0;pointer-events:none;transition:.26s}
 .scrim.on{opacity:1;pointer-events:auto}
 .drawer{position:fixed;z-index:400;background:var(--ink2);border:1px solid var(--line);
-  transition:transform .3s cubic-bezier(.2,.8,.3,1);overflow-y:auto;overscroll-behavior:contain}
+  transition:transform .32s cubic-bezier(.2,.8,.3,1);overflow-y:auto;overscroll-behavior:contain}
 @media(min-width:781px){
-  .drawer{top:var(--bar);right:0;width:400px;max-height:calc(100vh - var(--bar));
-    border-right:0;border-top:0;transform:translateX(102%)}
+  .drawer{top:var(--bar);right:0;width:420px;max-height:calc(100vh - var(--bar));
+    border-right:0;border-top:0;transform:translateX(102%);box-shadow:-10px 0 40px rgba(0,0,0,.6)}
   .drawer.on{transform:none}
 }
 @media(max-width:780px){
-  .drawer{left:0;right:0;bottom:0;max-height:78vh;border-radius:14px 14px 0 0;border-bottom:0;
-    transform:translateY(101%);padding-bottom:env(safe-area-inset-bottom)}
+  .drawer{left:0;right:0;bottom:0;max-height:82vh;border-radius:18px 18px 0 0;border-bottom:0;
+    transform:translateY(101%);padding-bottom:env(safe-area-inset-bottom);box-shadow:0 -10px 40px rgba(0,0,0,.6)}
   .drawer.on{transform:none}
-  .drawer::before{content:"";display:block;width:36px;height:4px;border-radius:2px;background:var(--line);
-    margin:10px auto 2px}
+  .drawer::before{content:"";display:block;width:38px;height:4px;border-radius:2px;background:var(--line2);
+    margin:12px auto 4px}
 }
-.dhead{display:flex;align-items:center;justify-content:space-between;padding:14px 18px 10px;
-  position:sticky;top:0;background:var(--ink2);z-index:2}
-.dhead h3{font-family:"Songti SC",serif;font-size:17px}
-.dhead button{font:inherit;font-size:12px;color:var(--bone3);background:0;border:0;cursor:pointer;padding:6px}
+.dhead{display:flex;align-items:center;justify-content:space-between;padding:16px 20px 12px;
+  position:sticky;top:0;background:var(--ink2);z-index:2;border-bottom:1px solid var(--line)}
+.dhead h3{font-family:"Songti SC",serif;font-size:18px}
+.dhead button{font:inherit;font-size:12.5px;color:var(--bone3);background:0;border:0;cursor:pointer;padding:6px}
 .dhead button:hover{color:var(--red2)}
-.grp{padding:0 18px 18px}
-.grp h4{font-size:10px;letter-spacing:.22em;color:var(--bone3);margin:14px 0 9px}
-.chips{display:flex;flex-wrap:wrap;gap:7px}
-.chip{font:inherit;font-size:12.5px;padding:6px 12px;border-radius:3px;border:1px solid var(--line);
-  background:transparent;color:var(--bone2);cursor:pointer;transition:.16s;white-space:nowrap}
-.chip:hover{border-color:var(--bone3);color:var(--bone)}
+.grp{padding:0 20px 20px}
+.grp h4{font-size:10.5px;letter-spacing:.22em;color:var(--bone3);margin:16px 0 10px}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{font:inherit;font-size:12.5px;padding:6px 14px;border-radius:var(--r-full);border:1px solid var(--line);
+  background:rgba(255,255,255,.02);color:var(--bone2);cursor:pointer;transition:.16s;white-space:nowrap}
+.chip:hover{border-color:var(--line2);color:var(--bone);background:rgba(255,255,255,.05)}
 .chip .c{opacity:.45;margin-left:5px;font-size:11px}
-.chip.on{background:var(--bone);border-color:var(--bone);color:var(--ink);font-weight:500}
-.chip.on.tS{background:var(--red);border-color:var(--red);color:#fff}
-.chip.on.tA{background:var(--glacier);border-color:var(--glacier);color:var(--ink)}
-.mgrid{display:grid;grid-template-columns:repeat(6,1fr);gap:7px}
-.mgrid .chip{padding:7px 0;text-align:center}
-.dfoot{position:sticky;bottom:0;background:linear-gradient(transparent,var(--ink2) 22%);padding:14px 18px}
-.dfoot button{width:100%;font:inherit;font-size:14px;font-weight:500;padding:12px;border:0;border-radius:3px;
-  background:var(--bone);color:var(--ink);cursor:pointer}
+.chip.on{background:var(--bone);border-color:var(--bone);color:var(--ink);font-weight:600}
+.chip.on.tS{background:linear-gradient(135deg,var(--red),var(--red2));border-color:transparent;color:#fff;box-shadow:0 2px 10px var(--red-glow)}
+.chip.on.tA{background:linear-gradient(135deg,#2f5f73,#4f96b0);border-color:transparent;color:#edf7fa;box-shadow:0 2px 10px var(--glacier-glow)}
+.mgrid{display:grid;grid-template-columns:repeat(6,1fr);gap:8px}
+.mgrid .chip{padding:8px 0;text-align:center;border-radius:var(--r-xs)}
+.dfoot{position:sticky;bottom:0;background:linear-gradient(transparent,var(--ink2) 25%);padding:16px 20px}
+.dfoot button{width:100%;font:inherit;font-size:14px;font-weight:600;padding:13px;border:0;border-radius:var(--r-sm);
+  background:var(--bone);color:var(--ink);cursor:pointer;box-shadow:0 4px 16px rgba(255,255,255,.1)}
 
 /* ---------- 卡片 ---------- */
 .wrap{padding:clamp(20px,4vw,48px) clamp(12px,4vw,72px) 100px}
-.secthead{display:flex;align-items:baseline;gap:14px;margin:34px 0 16px;padding-bottom:10px;border-bottom:1px solid var(--line)}
+.secthead{display:flex;align-items:baseline;gap:14px;margin:38px 0 18px;padding-bottom:12px;border-bottom:1px solid var(--line)}
 .secthead:first-child{margin-top:0}
-.secthead h2{font-family:"Songti SC",serif;font-size:22px;font-weight:600;letter-spacing:.05em}
-.secthead .tag{font-size:10px;letter-spacing:.18em;color:var(--bone3);border:1px solid var(--line);padding:3px 8px;border-radius:2px}
-.grid{display:grid;gap:clamp(10px,1.6vw,20px);grid-template-columns:repeat(auto-fill,minmax(min(268px,100%),1fr))}
-.card{position:relative;background:var(--ink2);border:1px solid var(--line);border-radius:3px;overflow:hidden;
-  cursor:pointer;transition:transform .3s cubic-bezier(.2,.8,.3,1),border-color .3s,box-shadow .3s}
-@media(hover:hover){.card:hover{transform:translateY(-4px);border-color:#3d444d;box-shadow:0 18px 42px -18px #000}
-  .card:hover .ph{transform:scale(1.045)}}
+.secthead h2{font-family:"Songti SC",serif;font-size:24px;font-weight:600;letter-spacing:.04em}
+.secthead .tag{font-size:10.5px;letter-spacing:.18em;color:var(--bone3);border:1px solid var(--line);padding:3px 9px;border-radius:var(--r-full)}
+.grid{display:grid;gap:clamp(14px,1.8vw,22px);grid-template-columns:repeat(auto-fill,minmax(min(278px,100%),1fr))}
+.card{position:relative;background:var(--ink2);border:1px solid var(--line);border-radius:var(--r-md);overflow:hidden;
+  cursor:pointer;transition:transform .3s cubic-bezier(.2,.8,.3,1),border-color .3s,box-shadow .3s;box-shadow:0 4px 18px rgba(0,0,0,.35)}
+@media(hover:hover){
+  .card:hover{transform:translateY(-5px);border-color:var(--line2);box-shadow:0 20px 42px -12px rgba(0,0,0,.75),0 0 0 1px rgba(255,255,255,.1)}
+  .card:hover .ph{transform:scale(1.055)}
+}
 .scene{position:relative;aspect-ratio:16/10;overflow:hidden;background:#0a0c0f}
 .scene svg{position:absolute;inset:0;width:100%;height:100%;display:block;transition:opacity .5s}
 .ph{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;
   transition:opacity .55s,transform .5s cubic-bezier(.2,.8,.3,1)}
 .ph.in{opacity:1}
-.veil{position:absolute;inset:0;background:linear-gradient(to top,rgba(13,15,19,.93) 0%,rgba(13,15,19,.2) 46%,transparent 74%)}
-.badge{position:absolute;top:8px;left:8px;z-index:3;font-size:9.5px;font-weight:600;letter-spacing:.14em;
-  padding:2px 7px;border-radius:2px;background:var(--bone);color:var(--ink)}
-.badge.S{background:var(--red);color:#fff}
-.badge.A{background:var(--glacier);color:var(--ink)}
-.prov{position:absolute;top:8px;right:8px;z-index:3;font-size:10px;letter-spacing:.14em;color:var(--bone);
-  background:rgba(13,15,19,.55);backdrop-filter:blur(6px);padding:2px 8px;border-radius:2px}
-.realtag{position:absolute;bottom:8px;right:8px;z-index:3;font-size:9px;letter-spacing:.1em;color:var(--bone2);
-  background:rgba(13,15,19,.5);backdrop-filter:blur(4px);padding:2px 6px;border-radius:2px}
-.name{position:absolute;left:13px;right:13px;bottom:10px;z-index:3;font-family:"Songti SC",serif;
-  font-size:18px;font-weight:600;letter-spacing:.03em;text-shadow:0 2px 14px rgba(0,0,0,.8);line-height:1.3}
-.body{padding:12px 13px 14px}
-.desc{font-size:12.5px;line-height:1.7;color:var(--bone2)}
-.meta{margin-top:10px}
-.mo{font-size:10px;letter-spacing:.05em;color:var(--gold);border:1px solid rgba(217,164,65,.35);padding:2px 7px;border-radius:2px}
-.warn{font-size:11px;color:var(--bone3);line-height:1.6;margin-top:8px;padding-left:10px;position:relative}
-.warn::before{content:"";position:absolute;left:0;top:5px;bottom:5px;width:2px;background:var(--line)}
-.warn.hot{color:var(--red2)}
+.veil{position:absolute;inset:0;background:linear-gradient(to top,rgba(11,13,17,.94) 0%,rgba(11,13,17,.25) 48%,transparent 75%)}
+.badge{position:absolute;top:10px;left:10px;z-index:3;font-size:10px;font-weight:600;letter-spacing:.12em;
+  padding:3px 9px;border-radius:var(--r-full);background:var(--bone);color:var(--ink);box-shadow:0 2px 10px rgba(0,0,0,.5)}
+.badge.S{background:linear-gradient(135deg,var(--red),var(--red2));color:#fff;box-shadow:0 2px 12px var(--red-glow)}
+.badge.A{background:linear-gradient(135deg,#2f5f73,#4f96b0);color:#edf7fa;box-shadow:0 2px 12px var(--glacier-glow)}
+.prov{position:absolute;top:10px;right:10px;z-index:3;font-size:10.5px;letter-spacing:.12em;color:var(--bone);
+  background:rgba(11,13,17,.65);backdrop-filter:blur(8px);padding:2.5px 9px;border-radius:var(--r-full);border:1px solid rgba(255,255,255,.1)}
+.realtag{position:absolute;bottom:10px;right:10px;z-index:3;font-size:9.5px;letter-spacing:.08em;color:var(--bone2);
+  background:rgba(11,13,17,.6);backdrop-filter:blur(6px);padding:2px 8px;border-radius:var(--r-full);border:1px solid rgba(255,255,255,.08)}
+.name{position:absolute;left:14px;right:14px;bottom:12px;z-index:3;font-family:"Songti SC",serif;
+  font-size:19px;font-weight:600;letter-spacing:.03em;text-shadow:0 2px 12px rgba(0,0,0,.9);line-height:1.3}
+.body{padding:13px 15px 16px}
+.desc{font-size:12.5px;line-height:1.72;color:var(--bone2)}
+.mo{font-size:10.5px;letter-spacing:.05em;color:var(--gold);border:1px solid rgba(212,162,64,.35);
+  background:rgba(212,162,64,.06);padding:2.5px 8px;border-radius:var(--r-xs);display:inline-flex;align-items:center;gap:4px}
+.mo::before{content:"";display:inline-block;width:5px;height:5px;border-radius:50%;background:var(--gold)}
+.warn{font-size:11px;color:var(--bone3);line-height:1.6;margin-top:10px;padding:6px 10px 6px 12px;
+  border-radius:0 var(--r-xs) var(--r-xs) 0;background:rgba(255,255,255,.018);position:relative}
+.warn::before{content:"";position:absolute;left:0;top:4px;bottom:4px;width:2.5px;border-radius:2px;background:var(--line2)}
+.warn.hot{color:var(--red2);background:rgba(200,80,60,.05)}
 .warn.hot::before{background:var(--red)}
 
 /* ---------- 地图 ---------- */
 #mapView{display:none;position:relative}
 #mapView.on{display:block}
 .mapbox{position:relative;width:100%;height:calc(100vh - var(--bar));overflow:hidden;
-  background:radial-gradient(120% 90% at 50% 0%,#151a22,#0a0c10 70%);cursor:grab;touch-action:none}
+  background:radial-gradient(120% 90% at 50% 0%,#151a22,#090b0e 70%);cursor:grab;touch-action:none}
 .mapbox.drag{cursor:grabbing}
 .mapbox svg{position:absolute;inset:0;width:100%;height:100%;display:block}
 .prov-path{fill:#1b2029;stroke:#333a45;stroke-width:.9;vector-effect:non-scaling-stroke;transition:fill .25s}
@@ -192,72 +232,95 @@ h1 em{font-style:normal;color:var(--red2)}
 .prov-path.dim{fill:#14181f;stroke:#252b34}
 .pins{position:absolute;inset:0;pointer-events:none}
 .pin{position:absolute;transform:translate(-50%,-50%);pointer-events:auto;cursor:pointer;
-  display:flex;align-items:center;justify-content:center;transition:transform .12s}
-.pin:active{transform:translate(-50%,-50%) scale(.9)}
-/* 地图上的地点用代表图缩略图，不用小圆点 */
-.dot{width:40px;height:40px;border-radius:50%;overflow:hidden;position:relative;
-  border:2px solid var(--glacier);background:#0a0c0f;
-  box-shadow:0 3px 12px rgba(0,0,0,.7),0 0 0 1px rgba(0,0,0,.5);transition:transform .16s,box-shadow .16s}
-.dot.S{border-color:var(--red);width:48px;height:48px}
+  display:flex;align-items:center;justify-content:center;transition:transform .14s ease}
+.pin:active{transform:translate(-50%,-50%) scale(.92)}
+.dot{width:42px;height:42px;border-radius:50%;overflow:hidden;position:relative;
+  border:2.5px solid var(--glacier);background:#0a0c0f;
+  box-shadow:0 4px 14px rgba(0,0,0,.75),0 0 0 1px rgba(0,0,0,.6);transition:transform .18s,box-shadow .18s}
+.dot.S{border-color:var(--red);width:48px;height:48px;box-shadow:0 4px 16px var(--red-glow),0 0 0 1px rgba(0,0,0,.6)}
 .dot img,.dot svg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
 .dot img{opacity:0;transition:opacity .4s}
 .dot img.in{opacity:1}
-.pin:hover .dot{transform:scale(1.12);box-shadow:0 6px 20px rgba(0,0,0,.8),0 0 0 2px rgba(255,255,255,.25)}
-.pin .lb{position:absolute;left:50%;top:calc(100% + 4px);transform:translateX(-50%);
+.pin:hover .dot{transform:scale(1.14);box-shadow:0 8px 24px rgba(0,0,0,.85),0 0 0 2px rgba(255,255,255,.3)}
+.pin .lb{position:absolute;left:50%;top:calc(100% + 5px);transform:translateX(-50%);
   font-size:10.5px;white-space:nowrap;color:var(--bone);text-shadow:0 1px 6px #000,0 0 10px #000;
   pointer-events:none;font-family:"Songti SC",serif}
 .pin .pk{position:absolute;top:-3px;right:-3px;width:15px;height:15px;border-radius:50%;
   background:var(--gold);border:2px solid var(--ink);display:none}
 .pin.picked .pk{display:block}
-.clus{min-width:32px;height:32px;padding:0 8px;border-radius:16px;background:rgba(20,24,31,.92);
-  border:1px solid #3d4652;backdrop-filter:blur(6px);display:flex;align-items:center;justify-content:center;
-  font-size:12px;font-weight:600;color:var(--bone);box-shadow:0 4px 16px rgba(0,0,0,.5)}
-.clus.big{min-width:40px;height:40px;font-size:13.5px}
-.clus i{font-style:normal;font-size:8.5px;color:var(--bone3);margin-left:3px}
-.mapui{position:absolute;right:12px;bottom:calc(16px + env(safe-area-inset-bottom));z-index:20;
-  display:flex;flex-direction:column;gap:7px}
-.mapui button{width:38px;height:38px;border-radius:3px;border:1px solid var(--line);background:rgba(20,24,31,.9);
-  backdrop-filter:blur(8px);color:var(--bone);font-size:17px;cursor:pointer;transition:.16s}
-.mapui button:hover{background:var(--red);border-color:var(--red);color:#fff}
-.maphint{position:absolute;left:12px;top:12px;z-index:20;font-size:10.5px;color:var(--bone3);
-  background:rgba(13,15,19,.62);backdrop-filter:blur(6px);padding:5px 10px;border-radius:3px;
+.clus{min-width:34px;height:34px;padding:0 9px;border-radius:17px;background:rgba(20,25,33,.94);
+  border:1px solid #455060;backdrop-filter:blur(8px);display:flex;align-items:center;justify-content:center;
+  font-size:12.5px;font-weight:600;color:var(--bone);box-shadow:0 4px 18px rgba(0,0,0,.6)}
+.clus.big{min-width:42px;height:42px;font-size:14px}
+.clus i{font-style:normal;font-size:9px;color:var(--bone3);margin-left:3px}
+.mapui{position:absolute;right:16px;bottom:calc(20px + env(safe-area-inset-bottom));z-index:20;
+  display:flex;flex-direction:column;gap:8px}
+.mapui button{width:40px;height:40px;border-radius:var(--r-sm);border:1px solid var(--line2);background:rgba(19,23,30,.88);
+  backdrop-filter:blur(12px);color:var(--bone);display:flex;align-items:center;justify-content:center;cursor:pointer;transition:.18s}
+.mapui button:hover{background:var(--ink4);border-color:var(--bone2);transform:scale(1.05)}
+.maphint{position:absolute;left:16px;top:16px;z-index:20;font-size:11px;color:var(--bone3);
+  background:rgba(11,13,17,.7);backdrop-filter:blur(8px);padding:6px 12px;border-radius:var(--r-full);
   border:1px solid var(--line);letter-spacing:.04em;pointer-events:none}
-.mapleg{position:absolute;left:12px;bottom:calc(16px + env(safe-area-inset-bottom));z-index:20;
-  display:flex;gap:12px;font-size:10.5px;color:var(--bone2);background:rgba(13,15,19,.62);
-  backdrop-filter:blur(6px);padding:6px 11px;border-radius:3px;border:1px solid var(--line)}
-.mapleg span{display:flex;align-items:center;gap:5px}
-.mapleg i{width:11px;height:11px;border-radius:50%;display:block;border:2px solid;background:transparent!important}
+.mapleg{position:absolute;left:16px;bottom:calc(20px + env(safe-area-inset-bottom));z-index:20;
+  display:flex;gap:14px;font-size:11px;color:var(--bone2);background:rgba(11,13,17,.7);
+  backdrop-filter:blur(8px);padding:7px 14px;border-radius:var(--r-full);border:1px solid var(--line)}
+.mapleg span{display:flex;align-items:center;gap:6px}
+.mapleg i{width:11px;height:11px;border-radius:50%;display:block;border:2.5px solid;background:transparent!important}
+
+/* 地图悬浮轻量预览卡片 */
+.map-tooltip{position:absolute;z-index:40;transform:translate(-50%,-100%) translateY(-14px);
+  background:rgba(17,21,28,.95);backdrop-filter:blur(16px);border:1px solid var(--line2);
+  border-radius:var(--r-md);padding:10px;width:220px;box-shadow:0 14px 36px rgba(0,0,0,.75),0 0 0 1px rgba(255,255,255,.08);
+  pointer-events:auto;display:none}
+.map-tooltip.on{display:flex;flex-direction:column;gap:8px;animation:tipPop .2s cubic-bezier(.2,.8,.3,1)}
+@keyframes tipPop{from{opacity:0;transform:translate(-50%,-95%) translateY(-10px)}to{opacity:1;transform:translate(-50%,-100%) translateY(-14px)}}
+.tip-thumb{width:100%;height:105px;border-radius:var(--r-sm);overflow:hidden;background:#0a0c0f;position:relative}
+.tip-thumb img,.tip-thumb svg{width:100%;height:100%;object-fit:cover;display:block}
+.tip-title{font-family:"Songti SC",serif;font-size:15px;font-weight:600;color:var(--bone);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.tip-sub{font-size:11px;color:var(--bone3);letter-spacing:.04em}
+.tip-btn{margin-top:2px;width:100%;font:inherit;font-size:12px;padding:6px;border-radius:var(--r-xs);
+  border:0;background:var(--bone);color:var(--ink);font-weight:600;cursor:pointer;transition:opacity .15s}
+.tip-btn:hover{opacity:.9}
 
 /* ---------- 详情 ---------- */
-.modal{position:fixed;inset:0;z-index:1000;display:none;background:rgba(6,7,9,.9);
-  backdrop-filter:blur(10px);overflow-y:auto;padding:clamp(0px,4vw,52px)}
-.modal.on{display:flex;align-items:flex-start;justify-content:center}
-.sheet{width:min(720px,100%);background:var(--ink2);border:1px solid var(--line);border-radius:4px;overflow:hidden}
-@media(max-width:600px){.modal{padding:0}.sheet{min-height:100vh;border:0;border-radius:0}}
-/* 不能用 aspect-ratio + max-height：高度被截断时浏览器会连宽度一起收，
-   右侧会空出一条。这里直接给定高度、宽度撑满，靠 object-fit:cover 裁切。 */
-.sheet .scene{aspect-ratio:auto;width:100%;height:clamp(190px,32vh,300px)}
-/* 详情页的压暗只覆盖底部标题区，别把整张照片都压掉 */
-.sheet .veil{background:linear-gradient(to top,rgba(20,23,29,.94) 0%,rgba(20,23,29,.55) 22%,transparent 52%)}
-.cap{position:absolute;left:clamp(16px,4vw,30px);right:clamp(16px,4vw,30px);bottom:16px;z-index:3}
-.cap h3{font-family:"Songti SC",serif;font-size:clamp(22px,5.5vw,32px);font-weight:600;letter-spacing:.03em;line-height:1.25}
-.cap .p{font-size:11.5px;letter-spacing:.16em;color:var(--bone2);margin-top:6px}
-.inner{padding:clamp(18px,4vw,30px)}
-.inner .k{font-size:9.5px;letter-spacing:.2em;color:var(--bone3);margin-bottom:6px}
-.inner .v{font-size:14.5px;line-height:1.85;color:var(--bone);margin-bottom:20px}
+.modal{position:fixed;inset:0;z-index:1000;display:none;background:rgba(6,8,11,.88);
+  backdrop-filter:blur(14px);overflow-y:auto;padding:clamp(0px,4vw,52px);align-items:flex-start;justify-content:center}
+.modal.on{display:flex}
+.sheet{width:min(720px,100%);background:var(--ink2);border:1px solid var(--line2);border-radius:var(--r-lg);
+  overflow:hidden;box-shadow:0 25px 60px -15px rgba(0,0,0,.85),0 0 0 1px rgba(255,255,255,.06);
+  animation:sheetUp .28s cubic-bezier(.16,1,.3,1)}
+@keyframes sheetUp{from{opacity:0;transform:translateY(24px) scale(.98)}to{opacity:1;transform:translateY(0) scale(1)}}
+@media(max-width:600px){
+  .modal{padding:0}.sheet{min-height:100vh;border:0;border-radius:0;animation:none}
+}
+.sheet .scene{aspect-ratio:auto;width:100%;height:clamp(200px,34vh,320px)}
+.sheet .veil{background:linear-gradient(to top,rgba(19,22,29,.96) 0%,rgba(19,22,29,.55) 24%,transparent 55%)}
+.cap{position:absolute;left:clamp(18px,4vw,32px);right:clamp(18px,4vw,32px);bottom:18px;z-index:3}
+.cap h3{font-family:"Songti SC",serif;font-size:clamp(24px,5.5vw,34px);font-weight:600;letter-spacing:.03em;line-height:1.25}
+.cap .p{font-size:12px;letter-spacing:.16em;color:var(--bone2);margin-top:6px}
+.inner{padding:clamp(20px,4vw,34px)}
+.inner .k{font-size:10px;letter-spacing:.22em;color:var(--bone3);margin-bottom:8px}
+.inner .v{font-size:14.5px;line-height:1.85;color:var(--bone);margin-bottom:22px}
 .inner .v:last-child{margin-bottom:0}
 .inner .v.dim{color:var(--bone2);font-size:13px}
 .inner .v.gold{color:var(--gold)}
-.credit{margin-top:18px;padding-top:14px;border-top:1px solid var(--line);font-size:10.5px;color:var(--bone3);line-height:1.7}
-.credit a{color:var(--bone2)}
+
+/* 坐标操作行 */
+.georow{display:flex;align-items:center;justify-content:space-between;gap:10px;background:rgba(255,255,255,.03);
+  border:1px solid var(--line);border-radius:var(--r-sm);padding:8px 12px;margin-bottom:20px}
+.geotxt{font-size:12px;color:var(--bone2);letter-spacing:.05em}
+.cpbtn{font:inherit;font-size:11px;padding:3.5px 10px;border-radius:var(--r-full);border:1px solid var(--line2);
+  background:rgba(255,255,255,.06);color:var(--bone);cursor:pointer;transition:all .16s ease}
+.cpbtn:hover{background:var(--bone);color:var(--ink)}
+
 /* 延伸阅读 */
-.links{display:grid;grid-template-columns:repeat(auto-fit,minmax(112px,1fr));gap:8px;margin-bottom:4px}
+.links{display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:9px;margin-bottom:4px}
 @media(max-width:420px){.lk{padding:9px 10px;gap:7px}.lk .tx span{display:none}.lk .tx b{font-size:12px}}
-.lk{display:flex;align-items:center;gap:9px;padding:10px 12px;border:1px solid var(--line);border-radius:3px;
-  text-decoration:none;color:var(--bone2);transition:.18s;background:rgba(255,255,255,.015)}
-.lk:hover{border-color:var(--bone3);color:var(--bone);background:rgba(255,255,255,.045)}
-.lk .ic{width:24px;height:24px;border-radius:3px;flex:none;display:flex;align-items:center;justify-content:center;
-  font-size:11px;font-weight:600;letter-spacing:0}
+.lk{display:flex;align-items:center;gap:9px;padding:10px 12px;border:1px solid var(--line);border-radius:var(--r-sm);
+  text-decoration:none;color:var(--bone2);transition:all .18s ease;background:rgba(255,255,255,.02)}
+.lk:hover{border-color:var(--line2);color:var(--bone);background:rgba(255,255,255,.06);transform:translateY(-2px)}
+.lk .ic{width:26px;height:26px;border-radius:var(--r-xs);flex:none;display:flex;align-items:center;justify-content:center;
+  font-size:11.5px;font-weight:600;letter-spacing:0}
 .lk .tx{min-width:0}
 .lk .tx b{display:block;font-size:12.5px;font-weight:500;color:var(--bone)}
 .lk .tx span{font-size:10px;color:var(--bone3);letter-spacing:.04em}
@@ -265,14 +328,22 @@ h1 em{font-style:normal;color:var(--red2)}
 .ic.am{background:rgba(45,160,120,.18);color:#63d6a8}
 .ic.xhs{background:rgba(200,60,70,.18);color:#e8707c}
 .ic.mfw{background:rgba(230,170,40,.16);color:#e0b455}
-.geo{font-size:11.5px;color:var(--bone3);letter-spacing:.04em;margin-top:-12px;margin-bottom:20px}
-.warnbox{border:1px solid rgba(200,80,60,.3);background:rgba(200,80,60,.06);border-radius:3px;
-  padding:11px 13px;font-size:13px;line-height:1.7;color:var(--red2);margin-bottom:20px}
-.close{position:absolute;top:12px;right:12px;z-index:5;width:34px;height:34px;border-radius:50%;
-  border:1px solid var(--line);background:rgba(13,15,19,.75);color:var(--bone);cursor:pointer;font-size:17px;
-  backdrop-filter:blur(6px);transition:.2s}
+.warnbox{border:1px solid rgba(200,80,60,.3);background:rgba(200,80,60,.06);border-radius:var(--r-sm);
+  padding:12px 14px;font-size:13px;line-height:1.75;color:var(--red2);margin-bottom:22px}
+.close{position:absolute;top:14px;right:14px;z-index:5;width:36px;height:36px;border-radius:50%;
+  border:1px solid var(--line2);background:rgba(11,13,17,.75);color:var(--bone);cursor:pointer;font-size:18px;
+  backdrop-filter:blur(8px);transition:.2s;display:flex;align-items:center;justify-content:center}
 .close:hover{background:var(--red);border-color:var(--red);color:#fff}
-.empty{text-align:center;padding:70px 20px;color:var(--bone3);font-size:14px}
+.credit{margin-top:20px;padding-top:16px;border-top:1px solid var(--line);font-size:11px;color:var(--bone3);line-height:1.75}
+.credit a{color:var(--bone2)}
+.empty{text-align:center;padding:80px 20px;color:var(--bone3);font-size:14.5px}
+
+/* Toast 提示 */
+.toast{position:fixed;bottom:calc(24px + env(safe-area-inset-bottom));left:50%;transform:translateX(-50%) translateY(20px);
+  background:rgba(20,25,34,.95);backdrop-filter:blur(14px);color:var(--bone);border:1px solid var(--line2);
+  border-radius:var(--r-full);padding:9px 20px;font-size:12.5px;letter-spacing:.03em;z-index:9999;
+  opacity:0;pointer-events:none;transition:all .25s cubic-bezier(.2,.8,.3,1);box-shadow:0 10px 30px rgba(0,0,0,.6)}
+.toast.on{opacity:1;transform:translateX(-50%) translateY(0)}
 
 /* ---------- 页脚 ---------- */
 .site-footer{margin-top:60px;padding:36px 0 24px;border-top:1px solid var(--line);font-size:12px;line-height:1.8;color:var(--bone3);text-align:center}
@@ -287,10 +358,10 @@ h1 em{font-style:normal;color:var(--red2)}
 <header class="hero">
   <div class="eyebrow">China Landscape · Site Atlas</div>
   <h1 class="serif">山河为证<br><em>地点图鉴</em></h1>
-  <p class="sub">山高水远，风光为证。收录大好河山风光图鉴！记录中国境内的山川旷野与地理坐标，自由探索与搭配。</p>
+  <p class="sub">山高水远，风光为证。收录大好河山风光图鉴！记录中国境内的山川旷野与地理坐标，自由探索与发现。</p>
   <div class="stats">
-    <div class="stat"><div class="n" id="s1"></div><div class="l">仪 式 地</div></div>
-    <div class="stat"><div class="n" id="s2"></div><div class="l">旅 拍 地</div></div>
+    <div class="stat"><div class="n" id="s1"></div><div class="l">核 心 胜 境</div></div>
+    <div class="stat"><div class="n" id="s2"></div><div class="l">旷 野 秘 境</div></div>
     <div class="stat"><div class="n" id="s3"></div><div class="l">省 区</div></div>
     <div class="stat"><div class="n" id="s4"></div><div class="l">实 景 照</div></div>
   </div>
@@ -302,13 +373,39 @@ h1 em{font-style:normal;color:var(--red2)}
     <button id="vMap">地图</button>
   </div>
   <span class="search" id="searchWrap">
-    <input id="q" type="search" placeholder="搜地点、省份、关键词" autocomplete="off">
+    <input id="q" type="search" placeholder="搜地点、省份、风光关键词..." autocomplete="off">
     <button class="x" id="qx" aria-label="清除">×</button>
   </span>
+  <button class="m-search-btn" id="mSearchBtn" aria-label="搜索" title="搜索">
+    <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+  </button>
   <button class="fbtn" id="fbtn">筛选<span class="dot" id="fdot">0</span></button>
   <button class="fbtn pick" id="pickBtn">已选 <b id="pickN">0</b></button>
   <span class="cnt" id="cnt"></span>
 </nav>
+
+<!-- 移动端可展开搜索栏 -->
+<div class="m-search-row" id="mSearchRow">
+  <span class="search has" id="searchWrapMRow" style="width:100%">
+    <input id="qmRow" type="search" placeholder="输入地点、省份、关键词..." autocomplete="off">
+    <button class="x" id="qmRowX" aria-label="清除">×</button>
+  </span>
+</div>
+
+<!-- 快捷场景胶囊栏 -->
+<div class="pills-bar" id="pillsBar">
+  <div class="pills-inner">
+    <button class="pill-btn act" id="pillAll" data-type="all">全部探索</button>
+    <button class="pill-btn" id="pillMonth" data-type="cur-month">🌟 本月最佳</button>
+    <button class="pill-btn" id="pillTierS" data-type="tier-s">👑 S级胜境</button>
+    <button class="pill-btn" data-type="kw" data-kw="mountain">🏔️ 高原雪山</button>
+    <button class="pill-btn" data-type="kw" data-kw="water">🌊 蔚蓝湖海</button>
+    <button class="pill-btn" data-type="kw" data-kw="canyon">🏜️ 峡谷雅丹</button>
+    <button class="pill-btn" data-type="kw" data-kw="forest">🌲 森林草原</button>
+    <button class="pill-btn pill-reset" id="pillReset" style="display:none">✕ 重置全部</button>
+  </div>
+</div>
+
 <button id="top" title="回到顶部">↑</button>
 
 <div class="scrim" id="scrim"></div>
@@ -349,18 +446,34 @@ h1 em{font-style:normal;color:var(--red2)}
   <div class="mapbox" id="mapbox">
     <svg id="msvg"><g id="mg"></g></svg>
     <div class="pins" id="pins"></div>
+    <!-- 地图轻量浮动卡片 -->
+    <div class="map-tooltip" id="mapTooltip">
+      <div class="tip-thumb" id="tipThumb"></div>
+      <div class="tip-title" id="tipTitle"></div>
+      <div class="tip-sub" id="tipSub"></div>
+      <button class="tip-btn" id="tipBtn">查看风光详情 ➔</button>
+    </div>
     <div class="maphint" id="hint">滚轮或双指缩放 · 拖动平移 · 点圆点看详情</div>
     <div class="mapleg">
-      <span><i style="border-color:var(--red)"></i>红圈 S 级</span>
-      <span><i style="border-color:var(--glacier)"></i>蓝圈 A 级</span>
+      <span><i style="border-color:var(--red)"></i>红圈 S 级胜境</span>
+      <span><i style="border-color:var(--glacier)"></i>蓝圈 A 级胜境</span>
     </div>
     <div class="mapui">
-      <button id="zin">＋</button><button id="zout">－</button><button id="zfit" title="复位">⤢</button>
+      <button id="zin" title="放大">
+        <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" fill="none"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+      </button>
+      <button id="zout" title="缩小">
+        <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" fill="none"><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+      </button>
+      <button id="zfit" title="全图复位">
+        <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg>
+      </button>
     </div>
   </div>
 </section>
 
 <div class="modal" id="modal"><div class="sheet" id="sheet"></div></div>
+<div class="toast" id="toast"></div>
 
 <script src="data.js"></script>
 <script>
@@ -446,14 +559,33 @@ const $=id=>document.getElementById(id);
 /* ================= 状态 ================= */
 const F={kind:'all',tier:'all',pv:'all',mo:'all'};
 let Q='';
+let currentScenario='all';
+const SCENARIOS={
+  mountain:['雪山','冰川','峰','主峰','神山','雪峰','贡嘎','梅里','萨普','雀儿山','珠峰','慕士塔格'],
+  water:['湖','错','海','天池','长海','翡翠湖','盐湖','泉','水','湾'],
+  canyon:['峡谷','雅丹','沙漠','戈壁','丹霞','魔鬼城','土林','俄博梁','天山','地裂'],
+  forest:['草原','湿地','林海','森林','牧场','草甸','白桦','落叶松','喀纳斯','那拉提']
+};
+
 const PROVS=[...new Set(D.map(x=>x.pv))].sort((a,b)=>D.filter(x=>x.pv===b).length-D.filter(x=>x.pv===a).length);
-const hit=x=>{if(!Q)return true;const s=Q.toLowerCase();
-  return (x.n+' '+x.pv+' '+x.d+' '+x.mo+' '+(x.w||'')).toLowerCase().includes(s)};
+
+const hit=x=>{
+  const fullText=(x.n+' '+x.pv+' '+x.d+' '+x.mo+' '+(x.w||'')).toLowerCase();
+  if(Q){
+    const s=Q.toLowerCase();
+    if(!fullText.includes(s))return false;
+  }
+  if(currentScenario!=='all'&&SCENARIOS[currentScenario]){
+    const kws=SCENARIOS[currentScenario];
+    const matchAny=kws.some(k=>fullText.includes(k.toLowerCase()));
+    if(!matchAny)return false;
+  }
+  return true;
+};
 const match=x=>(F.kind==='all'||x.k===F.kind)&&(F.tier==='all'||x.t===F.tier)&&
                (F.pv==='all'||x.pv===F.pv)&&(F.mo==='all'||x.m.includes(+F.mo))&&hit(x);
-const activeN=()=>['kind','tier','pv','mo'].filter(k=>F[k]!=='all').length;
+const activeN=()=>['kind','tier','pv','mo'].filter(k=>F[k]!=='all').length+(currentScenario!=='all'?1:0)+(Q?1:0);
 
-/* ---- 候选（localStorage 持久化） ---- */
 const KEY='wedding-atlas-picks';
 let PICKS=new Set();
 try{PICKS=new Set(JSON.parse(localStorage.getItem(KEY)||'[]'))}catch(_){}
@@ -461,7 +593,13 @@ const pid=x=>x.k+'|'+x.n;
 const isPicked=x=>PICKS.has(pid(x));
 function togglePick(x){
   const id=pid(x);
-  if(PICKS.has(id))PICKS.delete(id);else PICKS.add(id);
+  if(PICKS.has(id)){
+    PICKS.delete(id);
+    showToast('已移出候选：'+x.n);
+  }else{
+    PICKS.add(id);
+    showToast('已加入候选：'+x.n);
+  }
   try{localStorage.setItem(KEY,JSON.stringify([...PICKS]))}catch(_){}
   document.querySelectorAll('.star[data-id="'+CSS.escape(id)+'"]').forEach(b=>b.classList.toggle('on',PICKS.has(id)));
   syncPickBtn();
@@ -471,13 +609,22 @@ function syncPickBtn(){
   $('pickBtn').classList.toggle('has',PICKS.size>0);
 }
 
-function stat(id,n,u){const e=$(id);e.textContent=String(n);e.appendChild(txt('small','',u))}
 stat('s1',D.filter(x=>x.k==='c').length,'处');
 stat('s2',D.filter(x=>x.k==='p').length,'处');
 stat('s3',PROVS.length,'个');
 stat('s4',D.filter(x=>x.img).length,'张');
 
-/* ================= 筛选抽屉 ================= */
+function stat(id,n,u){const e=$(id);e.textContent=String(n);e.appendChild(txt('small','',u))}
+
+let toastTimer=0;
+function showToast(msg){
+  const t=$('toast');
+  t.textContent=msg;
+  t.classList.add('on');
+  clearTimeout(toastTimer);
+  toastTimer=setTimeout(()=>{t.classList.remove('on')},2200);
+}
+
 function chip(f,v,label,cnt,cls){
   const b=el('button','chip'+(cls?' '+cls:''));b.dataset.f=f;b.dataset.v=v;
   b.appendChild(document.createTextNode(label));
@@ -487,7 +634,7 @@ function chip(f,v,label,cnt,cls){
 }
 function buildFilters(){
   const K=$('fKind');K.textContent='';
-  [['all','全部'],['c','仪式地'],['p','旅拍地']].forEach(([v,l])=>K.appendChild(chip('kind',v,l)));
+  [['all','全部'],['c','核心胜境'],['p','旷野秘境']].forEach(([v,l])=>K.appendChild(chip('kind',v,l)));
   const T=$('fTier');T.textContent='';
   [['all','全部',''],['S','S 级','tS'],['A','A 级','tA']].forEach(([v,l,c])=>T.appendChild(chip('tier',v,l,undefined,c)));
   const M=$('fMon');M.textContent='';
@@ -502,6 +649,7 @@ $('drawer').addEventListener('click',e=>{
   const b=e.target.closest('.chip[data-f]');if(!b)return;
   F[b.dataset.f]=b.dataset.v;
   document.querySelectorAll('.chip[data-f="'+b.dataset.f+'"]').forEach(o=>o.classList.toggle('on',o.dataset.v===b.dataset.v));
+  syncPills();
   render();
 });
 function openD(){closeP();$('drawer').classList.add('on');$('scrim').classList.add('on')}
@@ -513,22 +661,92 @@ $('apply').onclick=closeD;
 $('pickBtn').onclick=openP;
 $('pickClose').onclick=closeP;
 $('scrim').onclick=()=>{closeD();closeP()};
-$('reset').onclick=()=>{F.kind=F.tier=F.pv=F.mo='all';Q='';$('q').value='';$('qm').value='';
-  $('searchWrap').classList.remove('has');buildFilters();render()};
+$('reset').onclick=resetAllFilters;
 
-/* ---- 搜索（顶栏 + 移动端抽屉内，两处同步） ---- */
+function resetAllFilters(){
+  F.kind=F.tier=F.pv=F.mo='all';
+  Q='';currentScenario='all';
+  $('q').value='';$('qm').value='';$('qmRow').value='';
+  $('searchWrap').classList.remove('has');
+  $('searchWrapMRow').classList.remove('has');
+  buildFilters();
+  syncPills();
+  render();
+}
+
+const curMonth=new Date().getMonth()+1;
+$('pillMonth').textContent=`🌟 ${curMonth}月最佳`;
+
+$('pillsBar').addEventListener('click',e=>{
+  const b=e.target.closest('.pill-btn');if(!b)return;
+  const t=b.dataset.type;
+  if(t==='all'){
+    resetAllFilters();
+    return;
+  }
+  if(b.id==='pillReset'){
+    resetAllFilters();
+    return;
+  }
+  if(t==='cur-month'){
+    if(F.mo===String(curMonth)){
+      F.mo='all';
+    }else{
+      F.mo=String(curMonth);
+    }
+  }else if(t==='tier-s'){
+    if(F.tier==='S'){
+      F.tier='all';
+    }else{
+      F.tier='S';
+    }
+  }else if(t==='kw'){
+    const kw=b.dataset.kw;
+    if(currentScenario===kw){
+      currentScenario='all';
+    }else{
+      currentScenario=kw;
+    }
+  }
+  buildFilters();
+  syncPills();
+  render();
+});
+
+function syncPills(){
+  const isAll=F.kind==='all'&&F.tier==='all'&&F.pv==='all'&&F.mo==='all'&&currentScenario==='all'&&!Q;
+  $('pillAll').classList.toggle('act',isAll);
+  $('pillMonth').classList.toggle('act',F.mo===String(curMonth));
+  $('pillTierS').classList.toggle('act',F.tier==='S');
+  document.querySelectorAll('.pill-btn[data-kw]').forEach(b=>{
+    b.classList.toggle('act',currentScenario===b.dataset.kw);
+  });
+  $('pillReset').style.display=isAll?'none':'inline-flex';
+}
+
 let qTimer=0;
 function setQ(v,from){
   Q=v.trim();
   $('searchWrap').classList.toggle('has',!!Q);
+  $('searchWrapMRow').classList.toggle('has',!!Q);
   if(from!=='q')$('q').value=v;
   if(from!=='qm')$('qm').value=v;
+  if(from!=='qmRow')$('qmRow').value=v;
+  syncPills();
   clearTimeout(qTimer);qTimer=setTimeout(render,140);
 }
 $('q').addEventListener('input',e=>setQ(e.target.value,'q'));
 $('qm').addEventListener('input',e=>setQ(e.target.value,'qm'));
+$('qmRow').addEventListener('input',e=>setQ(e.target.value,'qmRow'));
 $('qx').onclick=()=>setQ('','x');
-/* 窄屏时把搜索框搬进筛选抽屉 */
+$('qmRowX').onclick=()=>setQ('','x');
+
+$('mSearchBtn').onclick=()=>{
+  const row=$('mSearchRow');
+  const opened=row.classList.toggle('open');
+  if(opened)$('qmRow').focus();
+};
+
 function placeSearch(){
   const narrow=innerWidth<=780;
   $('mq').style.display=narrow?'':'none';
@@ -536,7 +754,6 @@ function placeSearch(){
 }
 placeSearch();addEventListener('resize',placeSearch);
 
-/* ---- 候选面板 ---- */
 function pickRow(x){
   const r=el('div','prow');
   const th=el('div','th');
@@ -548,6 +765,7 @@ function pickRow(x){
   tt.appendChild(txt('span','',x.pv+' · '+x.t+' 级 · '+x.mo));
   r.appendChild(tt);
   const rm=txt('button','rm','×');
+  rm.title='移除';
   rm.addEventListener('click',e=>{e.stopPropagation();togglePick(x);renderPicks();render()});
   r.appendChild(rm);
   r.addEventListener('click',()=>{closeP();openSheet(x)});
@@ -557,10 +775,10 @@ function renderPicks(){
   const body=$('picksBody');body.textContent='';
   const cer=D.filter(x=>x.k==='c'&&isPicked(x)),pho=D.filter(x=>x.k==='p'&&isPicked(x));
   if(!cer.length&&!pho.length){
-    body.appendChild(txt('div','pempty','还没有候选。在卡片或详情页点右上角的星标，把中意的地点存进来——仪式地和旅拍地各挑几个，再回到这里对比。'));
+    body.appendChild(txt('div','pempty','还没有候选。在卡片或详情页点右上角星标，把心仪的胜境存进来——核心胜境与旷野秘境自由搭配，再回到这里对比规划。'));
     return;
   }
-  [['仪 式 地',cer],['旅 拍 地',pho]].forEach(([t,list])=>{
+  [['核 心 胜 境',cer],['旷 野 秘 境',pho]].forEach(([t,list])=>{
     const g=el('div','pgrp');
     g.appendChild(txt('h4','',t+'（'+list.length+'）'));
     if(list.length)list.forEach(x=>g.appendChild(pickRow(x)));
@@ -569,11 +787,11 @@ function renderPicks(){
   });
   if(cer.length&&pho.length){
     const tip=el('div','ptip');
-    tip.appendChild(document.createTextNode('已经凑齐一组了。挑最终方案时优先看两点：'));
-    const b1=el('b');b1.textContent='最佳月份能不能对上';tip.appendChild(b1);
-    tip.appendChild(document.createTextNode('（错开就得分两次去），以及'));
-    const b2=el('b');b2.textContent='两地之间怎么接驳';tip.appendChild(b2);
-    tip.appendChild(document.createTextNode('。定下来告诉我，我做逐日行程。'));
+    tip.appendChild(document.createTextNode('已挑选多处地点！出行建议优先参考：'));
+    const b1=el('b');b1.textContent='最佳观景月份是否重合';tip.appendChild(b1);
+    tip.appendChild(document.createTextNode('（错开建议按季节分次前往），以及'));
+    const b2=el('b');b2.textContent='两地之间的自驾与接驳路线';tip.appendChild(b2);
+    tip.appendChild(document.createTextNode('。两者搭配，尽览大好河山。'));
     body.appendChild(tip);
   }
 }
@@ -583,21 +801,17 @@ $('pickClear').onclick=()=>{
   try{localStorage.setItem(KEY,'[]')}catch(_){}
   document.querySelectorAll('.star.on').forEach(b=>b.classList.remove('on'));
   syncPickBtn();renderPicks();
+  showToast('已清空所有候选');
 };
 syncPickBtn();
 
-/* ---- 回到顶部 ---- */
 const topBtn=$('top');
 addEventListener('scroll',()=>{
   topBtn.classList.toggle('on',scrollY>900&&!$('mapView').classList.contains('on'));
 },{passive:true});
 topBtn.onclick=()=>scrollTo({top:0,behavior:'smooth'});
 
-/* ================= 卡片 ================= */
 const out=$('out');
-/* 照片已下载到本地 photos/，每张两个尺寸：
-   _s 卡片用（500px 宽），_l 详情用（1280px 宽）。离线可用，不依赖外网。 */
-/* 文件名是中文（含 ·），显式编码，避免个别环境下不自动转义 */
 const IMG=(u,w)=>encodeURI(u.replace('{W}',w));
 function buildScene(x,seed,forSheet){
   const s=el('div','scene');
@@ -610,13 +824,12 @@ function buildScene(x,seed,forSheet){
     img.onload=show;
     img.onerror=()=>img.remove();
     img.src=IMG(x.img,forSheet?'l':'s');
-    if(img.complete&&img.naturalWidth)show();   // 命中缓存时 onload 不会再触发
+    if(img.complete&&img.naturalWidth)show();
     s.appendChild(img);
   }
   s.appendChild(el('div','veil'));
   return s;
 }
-/* 必须带 xmlns，否则 DOMParser 解出的节点没有 SVG 命名空间，浏览器不会渲染 */
 const STAR='<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2.6l2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.5 6.1 20.6l1.2-6.5L2.5 9.5l6.6-.9z" stroke-linejoin="round"/></svg>';
 function starBtn(x){
   const b=el('button','star'+(isPicked(x)?' on':''));
@@ -628,9 +841,9 @@ function starBtn(x){
 function buildCard(x){
   const c=el('article','card');c.dataset.i=String(D.indexOf(x));
   const s=buildScene(x,D.indexOf(x)+7);
-  s.appendChild(txt('span','badge '+x.t,x.t));
+  s.appendChild(txt('span','badge '+x.t,x.t+' 级'));
   s.appendChild(starBtn(x));
-  if(x.img)s.appendChild(txt('span','realtag','实景'));
+  if(x.img)s.appendChild(txt('span','realtag','实景照'));
   s.appendChild(txt('h3','name',x.n));
   c.appendChild(s);
   const b=el('div','body');
@@ -643,9 +856,8 @@ function buildCard(x){
   c.appendChild(b);
   return c;
 }
-function section(t,n){const h=el('div','secthead');h.appendChild(txt('h2','serif',t));h.appendChild(txt('span','tag',n+' 处'));return h}
+function section(t,n){const h=el('div','secthead');h.appendChild(txt('h2','serif',t));h.appendChild(txt('span','tag',n+' 处胜境'));return h}
 
-/* ================= 地图 ================= */
 const K=Math.cos(36*Math.PI/180);
 const pj=(lon,lat)=>[lon*K,-lat];
 let BB={x0:1e9,y0:1e9,x1:-1e9,y1:-1e9};
@@ -653,11 +865,9 @@ CHINA.p.forEach(([,rings])=>rings.forEach(r=>r.forEach(([lo,la])=>{
   const [x,y]=pj(lo,la);
   if(x<BB.x0)BB.x0=x;if(x>BB.x1)BB.x1=x;if(y<BB.y0)BB.y0=y;if(y>BB.y1)BB.y1=y;
 })));
-/* 绘制保留全部要素（含南海诸岛），但初始视野对准大陆+海南，
-   否则南海诸岛把纬度跨度拉到 3.8°N，主体会被压得极小 */
 const FIT={x0:73*K,y0:-54.2,x1:135.5*K,y1:-17.5};
 const W=FIT.x1-FIT.x0,H=FIT.y1-FIT.y0;
-const OX=FIT.x0-BB.x0,OY=FIT.y0-BB.y0;   // 绘图坐标系相对适配框的偏移
+const OX=FIT.x0-BB.x0,OY=FIT.y0-BB.y0;
 const mg=$('mg'),msvg=$('msvg'),mapbox=$('mapbox'),pins=$('pins');
 const NS='http://www.w3.org/2000/svg';
 const provEls={};
@@ -673,8 +883,6 @@ function fit(){
   const r=mapbox.getBoundingClientRect();vw=r.width;vh=r.height;
   msvg.setAttribute('viewBox','0 0 '+vw+' '+vh);
   view.k=fitK();
-  /* 竖屏手机上整幅中国按宽度适配后只占中间一条，上下大量留白。
-     这里放大到填满约七成高度，横向溢出部分可以拖动查看。 */
   if(vw<600)view.k=Math.max(view.k,(vh*.72)/H);
   view.tx=(vw-W*view.k)/2-OX*view.k;
   view.ty=(vh-H*view.k)/2-OY*view.k;
@@ -690,14 +898,40 @@ function zoomAt(cx,cy,f){
   view.tx=cx-(cx-view.tx)*(k1/k0);view.ty=cy-(cy-view.ty)*(k1/k0);view.k=k1;apply();
 }
 function fitK(){const pad=vw<600?12:34;return Math.min((vw-pad*2)/W,(vh-pad*2)/H)}
-/* 聚合 + 绘点 */
+
+let mapTipTimer=0;
+function showMapTip(x,px,py){
+  clearTimeout(mapTipTimer);
+  const tip=$('mapTooltip');
+  $('tipTitle').textContent=x.n;
+  $('tipSub').textContent=`${x.pv} · ${x.t}级 · 最佳 ${x.mo}`;
+  const th=$('tipThumb');
+  th.textContent='';
+  if(x.img){
+    const im=el('img');im.src=IMG(x.img,'s');im.alt='';th.appendChild(im);
+  }else{
+    th.appendChild(sceneNode(x.a,x.pl,D.indexOf(x)+7));
+  }
+  tip.style.left=px+'px';
+  tip.style.top=py+'px';
+  tip.classList.add('on');
+  $('tipBtn').onclick=e=>{e.stopPropagation();openSheet(x)};
+  tip.onclick=e=>{e.stopPropagation();openSheet(x)};
+}
+function scheduleHideMapTip(){
+  clearTimeout(mapTipTimer);
+  mapTipTimer=setTimeout(()=>{$('mapTooltip').classList.remove('on')},220);
+}
+$('mapTooltip').addEventListener('mouseenter',()=>clearTimeout(mapTipTimer));
+$('mapTooltip').addEventListener('mouseleave',scheduleHideMapTip);
+
 function drawPins(){
   pins.textContent='';
   const list=D.filter(x=>x.ll&&match(x));
   const pts=list.map(x=>{const[a,b]=pj(x.ll[0],x.ll[1]);
     return {x:(a-BB.x0)*view.k+view.tx,y:(b-BB.y0)*view.k+view.ty,d:x}})
     .filter(p=>p.x>-60&&p.x<vw+60&&p.y>-60&&p.y<vh+60);
-  const R=vw<600?58:66,buckets=new Map();   // 缩略图比小圆点大，聚合半径要跟着放大
+  const R=vw<600?58:66,buckets=new Map();
   pts.forEach(p=>{const key=Math.round(p.x/R)+'_'+Math.round(p.y/R);
     if(!buckets.has(key))buckets.set(key,[]);buckets.get(key).push(p)});
   const showLabel=view.k>fitK()*2.6;
@@ -708,8 +942,8 @@ function drawPins(){
       const x=g[0].d;
       if(isPicked(x))pin.classList.add('picked');
       const d=el('div','dot '+x.t);
-      d.appendChild(sceneNode(x.a,x.pl,D.indexOf(x)+7));      // 底图：生成的地貌示意
-      if(x.img){                                             // 有实景照就盖上去
+      d.appendChild(sceneNode(x.a,x.pl,D.indexOf(x)+7));
+      if(x.img){
         const im=el('img');im.decoding='async';im.alt='';im.loading='lazy';
         im.onload=()=>im.classList.add('in');im.onerror=()=>im.remove();
         im.src=IMG(x.img,'s');d.appendChild(im);
@@ -717,6 +951,9 @@ function drawPins(){
       d.appendChild(el('span','pk'));
       pin.appendChild(d);
       if(showLabel||x.t==='S'){const l=txt('span','lb',x.n.split(/[·/+–]/)[0].trim());pin.appendChild(l)}
+      
+      pin.addEventListener('mouseenter',()=>{showMapTip(x,mx,my)});
+      pin.addEventListener('mouseleave',scheduleHideMapTip);
       pin.onclick=ev=>{ev.stopPropagation();openSheet(x)};
     }else{
       const c=el('div','clus'+(g.length>7?' big':''));
@@ -729,20 +966,17 @@ function drawPins(){
   });
   $('hint').textContent = view.k>fitK()*1.3
     ? list.length+' 个地点 · 点圆点看详情'
-    : '滚轮或双指缩放 · 拖动平移 · 点数字展开';
+    : '滚轮或双指缩放 · 拖动平移 · 点数字聚合';
 }
-/* 交互 */
+
 let drag=null,pointers=new Map(),pinchD=0;
-/* 注意：不能在 pointerdown 里直接 setPointerCapture。
-   一旦容器捕获了指针，后续 click 的目标就变成容器本身，
-   落在圆点上的点击会被吞掉，详情永远打不开。
-   这里改成「移动超过阈值、确认是拖动之后」才捕获。 */
 const DRAG_TH=5;
 mapbox.addEventListener('pointerdown',e=>{
+  $('mapTooltip').classList.remove('on');
   pointers.set(e.pointerId,{x:e.clientX,y:e.clientY});
   if(pointers.size===1){drag={id:e.pointerId,x:e.clientX,y:e.clientY,tx:view.tx,ty:view.ty,moved:0,cap:false}}
   else if(pointers.size===2){
-    try{mapbox.setPointerCapture(e.pointerId)}catch(_){}   // 双指缩放不涉及点击语义
+    try{mapbox.setPointerCapture(e.pointerId)}catch(_){}
     const p=[...pointers.values()];pinchD=Math.hypot(p[0].x-p[1].x,p[0].y-p[1].y);drag=null;
   }
 });
@@ -758,8 +992,8 @@ mapbox.addEventListener('pointermove',e=>{
   if(!drag)return;
   const dx=e.clientX-drag.x,dy=e.clientY-drag.y;
   drag.moved=Math.max(drag.moved,Math.hypot(dx,dy));
-  if(drag.moved<DRAG_TH)return;                 // 还没到阈值，当作可能的点击
-  if(!drag.cap){                                // 确认是拖动，此时才捕获
+  if(drag.moved<DRAG_TH)return;
+  if(!drag.cap){
     drag.cap=true;mapbox.classList.add('drag');
     try{mapbox.setPointerCapture(e.pointerId)}catch(_){}
   }
@@ -776,13 +1010,12 @@ $('zout').onclick=()=>zoomAt(vw/2,vh/2,1/1.5);
 $('zfit').onclick=fit;
 addEventListener('resize',()=>{if($('mapView').classList.contains('on'))fit()});
 
-/* ================= 渲染 ================= */
 function render(){
   const c=D.filter(x=>x.k==='c'&&match(x)),p=D.filter(x=>x.k==='p'&&match(x));
   out.textContent='';
-  if(c.length){out.appendChild(section('仪式地',c.length));const g=el('div','grid');c.forEach(x=>g.appendChild(buildCard(x)));out.appendChild(g)}
-  if(p.length){out.appendChild(section('旅拍地',p.length));const g=el('div','grid');p.forEach(x=>g.appendChild(buildCard(x)));out.appendChild(g)}
-  if(!c.length&&!p.length)out.appendChild(txt('div','empty','这个组合下没有地点，换个月份或省区试试'));
+  if(c.length){out.appendChild(section('核心胜境',c.length));const g=el('div','grid');c.forEach(x=>g.appendChild(buildCard(x)));out.appendChild(g)}
+  if(p.length){out.appendChild(section('旷野秘境',p.length));const g=el('div','grid');p.forEach(x=>g.appendChild(buildCard(x)));out.appendChild(g)}
+  if(!c.length&&!p.length)out.appendChild(txt('div','empty','当前筛选条件下暂无地点，可尝试重置或切换其他月份'));
   const n=c.length+p.length;
   $('cnt').textContent=n+' / '+D.length;
   $('applyN').textContent=String(n);
@@ -796,58 +1029,86 @@ function render(){
 }
 out.addEventListener('click',e=>{const c=e.target.closest('.card');if(c)openSheet(D[+c.dataset.i])});
 
-/* ================= 详情 ================= */
 const modal=$('modal'),sheet=$('sheet');
+function fallbackCopy(text){
+  const ta=document.createElement('textarea');
+  ta.value=text;ta.style.position='fixed';ta.style.opacity='0';
+  document.body.appendChild(ta);ta.select();
+  try{document.execCommand('copy')}catch(_){}
+  document.body.removeChild(ta);
+}
 function openSheet(x){
   sheet.textContent='';
   const s=buildScene(x,D.indexOf(x)+7,true);
   s.appendChild(txt('button','close','×'));
-  const st=starBtn(x);st.style.right='52px';st.style.top='13px';
-  st.style.width='32px';st.style.height='32px';s.appendChild(st);
+  const st=starBtn(x);st.style.right='56px';st.style.top='15px';
+  st.style.width='34px';st.style.height='34px';s.appendChild(st);
   const cap=el('div','cap');
   cap.appendChild(txt('h3','serif',x.n));
-  cap.appendChild(txt('div','p',x.pv+' · '+(x.k==='c'?'仪式地':'旅拍地')+' · '+x.t+' 级'));
+  cap.appendChild(txt('div','p',x.pv+' · '+(x.k==='c'?'核心胜境':'旷野秘境')+' · '+x.t+' 级'));
   s.appendChild(cap);sheet.appendChild(s);
   const inn=el('div','inner');
-  inn.appendChild(txt('div','k',x.k==='c'?'效 果':'能 拍 出 什 么'));
+  inn.appendChild(txt('div','k','风 光 亮 点 与 视 觉 特 色'));
   inn.appendChild(txt('div','v',x.d));
-  inn.appendChild(txt('div','k','最 佳 月 份'));
+  inn.appendChild(txt('div','k','最 佳 观 景 月 份'));
   inn.appendChild(txt('div','v gold',x.mo));
+  
   if(x.ll){
-    inn.appendChild(txt('div','geo','坐标 '+x.ll[1].toFixed(2)+'°N, '+x.ll[0].toFixed(2)+'°E'));
+    const geoRow=el('div','georow');
+    const txtSpan=el('span','geotxt');
+    txtSpan.textContent=`📍 坐标 ${x.ll[1].toFixed(2)}°N, ${x.ll[0].toFixed(2)}°E`;
+    geoRow.appendChild(txtSpan);
+    const cpBtn=el('button','cpbtn');
+    cpBtn.textContent='复制坐标';
+    cpBtn.onclick=e=>{
+      e.stopPropagation();
+      const str=`${x.ll[1].toFixed(4)}, ${x.ll[0].toFixed(4)}`;
+      const done=()=>{
+        cpBtn.textContent='✓ 已复制';
+        showToast('已复制经纬度坐标：'+str);
+        setTimeout(()=>{cpBtn.textContent='复制坐标'},1800);
+      };
+      if(navigator.clipboard&&navigator.clipboard.writeText){
+        navigator.clipboard.writeText(str).then(done).catch(()=>{fallbackCopy(str);done()});
+      }else{
+        fallbackCopy(str);done();
+      }
+    };
+    geoRow.appendChild(cpBtn);
+    inn.appendChild(geoRow);
   }
+  
   if(x.w){
-    inn.appendChild(txt('div','k','注 意'));
+    inn.appendChild(txt('div','k','行 前 提 示'));
     if(x.hot)inn.appendChild(txt('div','warnbox',x.w));
     else inn.appendChild(txt('div','v dim',x.w));
   }
-  /* 延伸阅读：百科看背景，高德看位置，小红书看别人实拍，马蜂窝看攻略 */
+  
   const term=x.q||x.n, e=encodeURIComponent(term);
-  inn.appendChild(txt('div','k','延 伸 阅 读'));
+  inn.appendChild(txt('div','k','延 伸 阅 读 与 资 源'));
   const links=el('div','links');
-  /* 不用 baike.baidu.com/item/ 直连：冷门词条（如冷嘎措）会掉到百科首页，是死链。
-     走百度搜索，词条存在时第一条就是百科，不存在也有游记攻略兜底。 */
-  [['bk','百','百度搜索','百科词条与资料','https://www.baidu.com/s?wd='+encodeURIComponent(term+' 百科')],
+  [['bk','百','百度百科','词条与资料','https://www.baidu.com/s?wd='+encodeURIComponent(term+' 百科')],
    ['am','图','高德地图','按坐标定位',x.ll?('https://uri.amap.com/marker?position='+x.ll[0]+','+x.ll[1]+'&name='+e):('https://www.amap.com/search?query='+e)],
-   ['xhs','书','小红书','别人的实拍','https://www.xiaohongshu.com/search_result?keyword='+e],
-   ['mfw','蜂','马蜂窝','游记与攻略','https://www.mafengwo.cn/search/q.php?q='+e]
-  ].forEach(([c,ch,t,s,href])=>{
+   ['xhs','书','小红书','实拍摄影集','https://www.xiaohongshu.com/search_result?keyword='+e],
+   ['mfw','蜂','马蜂窝','深度攻略游记','https://www.mafengwo.cn/search/q.php?q='+e]
+  ].forEach(([c,ch,t,sub,href])=>{
     const a=el('a','lk');a.href=href;a.target='_blank';a.rel='noopener noreferrer';
     a.appendChild(txt('span','ic '+c,ch));
-    const tx=el('span','tx');tx.appendChild(txt('b','',t));tx.appendChild(txt('span','',s));
+    const tx=el('span','tx');tx.appendChild(txt('b','',t));tx.appendChild(txt('span','',sub));
     a.appendChild(tx);links.appendChild(a);
   });
   inn.appendChild(links);
+  
   const cr=el('div','credit');
   if(x.cr){
     cr.appendChild(document.createTextNode('实景照片：维基共享资源 · '));
     const a=el('a');a.href='https://commons.wikimedia.org/wiki/File:'+encodeURIComponent(x.cr);
     a.target='_blank';a.rel='noopener';a.textContent=x.cr;cr.appendChild(a);
   }else{
-    cr.textContent='未收录实景照片，配图为按当地地貌与色调生成的示意图';
+    cr.textContent='未收录实景照片，配图为按当地地貌与色调生成的矢量示意图';
   }
   cr.appendChild(el('br'));
-  cr.appendChild(document.createTextNode('延伸阅读为检索链接：高德按实测坐标定位，其余三个按「'+term+'」检索。'));
+  cr.appendChild(document.createTextNode('延伸阅读为检索链接：高德按实测坐标定位，其余按「'+term+'」检索。'));
   inn.appendChild(cr);
   sheet.appendChild(inn);
   modal.classList.add('on');document.body.style.overflow='hidden';
@@ -856,28 +1117,29 @@ function closeSheet(){modal.classList.remove('on');document.body.style.overflow=
 modal.addEventListener('click',e=>{if(e.target===modal||e.target.classList.contains('close'))closeSheet()});
 addEventListener('keydown',e=>{if(e.key==='Escape'){closeSheet();closeD()}});
 
-/* ================= 视图切换 ================= */
 $('vCard').onclick=()=>{
   $('vCard').classList.add('on');$('vMap').classList.remove('on');
   $('cardView').style.display='';$('mapView').classList.remove('on');
-  document.querySelector('.hero').style.display='';   // 恢复头图
+  document.querySelector('.hero').style.display='';
+  $('pillsBar').style.display='';
 };
 $('vMap').onclick=()=>{
   $('vMap').classList.add('on');$('vCard').classList.remove('on');
   $('cardView').style.display='none';$('mapView').classList.add('on');
-  document.querySelector('.hero').style.display='none';  // 让地图占满整屏
+  document.querySelector('.hero').style.display='none';
+  $('pillsBar').style.display='none';
   window.scrollTo(0,0);
-  fit();                       // 同步布局，页面隐藏时 rAF 不触发
-  requestAnimationFrame(fit);  // 再补一帧，处理滚动条消失导致的宽度变化
+  fit();
+  requestAnimationFrame(fit);
 };
-/* 容器尺寸变化时重新适配（旋转屏幕、地址栏收起等） */
 if(window.ResizeObserver){
   let t=0;
-  new ResizeObserver(()=>{
+  new window.ResizeObserver(()=>{
     if(!$('mapView').classList.contains('on'))return;
     clearTimeout(t);t=setTimeout(fit,120);
   }).observe(mapbox);
 }
+syncPills();
 render();
 </script>
 </body>
