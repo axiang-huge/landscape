@@ -1,12 +1,13 @@
 // Service Worker for China Landscape Atlas
-const CACHE_NAME = "landscape-cache-v1";
+const CACHE_NAME = "landscape-cache-v2";
 const STATIC_ASSETS = [
   "./",
   "index.html",
   "data.js",
   "manifest.json",
   "icon-192.png",
-  "icon-512.png"
+  "icon-512.png",
+  "og-cover.jpg"
 ];
 
 self.addEventListener("install", event => {

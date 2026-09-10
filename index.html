@@ -12,14 +12,14 @@
 <meta property="og:type" content="website">
 <meta property="og:title" content="山高水远皆可期 · 大好河山风光图鉴">
 <meta property="og:description" content="记录中国境内152处山川旷野与地理坐标，自由探索与发现。100%全收录实景摄影与旅行指南。">
-<meta property="og:image" content="https://axiang-huge.github.io/landscape/photos/梅里雪山·飞来寺_雾浓顶_1600.jpg">
+<meta property="og:image" content="https://axiang-huge.github.io/landscape/og-cover.jpg">
 <meta property="og:url" content="https://axiang-huge.github.io/landscape/">
 
 <!-- Twitter Card -->
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="山高水远皆可期 · 大好河山风光图鉴">
 <meta name="twitter:description" content="记录中国境内152处山川旷野与地理坐标，自由探索与发现。">
-<meta name="twitter:image" content="https://axiang-huge.github.io/landscape/photos/梅里雪山·飞来寺_雾浓顶_1600.jpg">
+<meta name="twitter:image" content="https://axiang-huge.github.io/landscape/og-cover.jpg">
 
 <!-- PWA & 移动端主屏幕 -->
 <link rel="manifest" href="manifest.json">
@@ -104,6 +104,13 @@ h1 em{font-style:normal;background:linear-gradient(135deg,var(--red2),var(--gold
   .bar .search,.bar .cnt{display:none}
   .m-search-btn{display:flex}
   .fbtn.pick{margin-left:0}
+}
+@media(max-width:520px){
+  .bar{gap:6px;padding:0 clamp(8px,2.5vw,16px)}
+  .seg button{padding:5px 9px;font-size:12px}
+  .fbtn{padding:5px 8px;font-size:12px;gap:3px}
+  .fbtn.wander span:last-child{display:none}
+  .fbtn.share-site-btn span:last-child{display:none}
 }
 
 /* ---------- 快捷场景胶囊栏 ---------- */
@@ -467,6 +474,77 @@ h1 em{font-style:normal;background:linear-gradient(135deg,var(--red2),var(--gold
   opacity:0;pointer-events:none;transition:all .25s cubic-bezier(.2,.8,.3,1);box-shadow:0 10px 30px rgba(0,0,0,.6)}
 .toast.on{opacity:1;transform:translateX(-50%) translateY(0)}
 
+/* ---------- 优雅分享面板 & 交互 ---------- */
+.sheet-top-share{
+  position:absolute;top:15px;right:98px;z-index:4;width:34px;height:34px;border-radius:50%;
+  border:1px solid rgba(255,255,255,.1);background:rgba(11,13,17,.6);backdrop-filter:blur(8px);
+  color:var(--bone);cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .2s ease;
+}
+.sheet-top-share:hover{background:rgba(11,13,17,.9);border-color:var(--bone);transform:scale(1.08)}
+.share-modal-wrap{z-index:1100;align-items:center;padding:18px}
+.share-card{
+  position:relative;width:min(480px,100%);background:var(--ink2);
+  border:1px solid var(--line2);border-radius:var(--r-lg);
+  padding:28px 24px 22px;box-shadow:0 30px 80px rgba(0,0,0,.85),0 0 0 1px rgba(255,255,255,.07);
+  animation:sheetUp .24s cubic-bezier(.16,1,.3,1);
+}
+.share-close-btn{
+  position:absolute;top:16px;right:16px;width:32px;height:32px;border-radius:50%;
+  border:1px solid var(--line);background:rgba(255,255,255,.04);color:var(--bone2);
+  cursor:pointer;font-size:18px;display:flex;align-items:center;justify-content:center;transition:.18s;line-height:1;
+}
+.share-close-btn:hover{background:rgba(255,255,255,.12);color:var(--bone);border-color:var(--line2)}
+.share-header{margin-bottom:18px;padding-right:24px}
+.share-badge{
+  display:inline-block;font-size:11px;letter-spacing:.12em;padding:2.5px 9px;border-radius:var(--r-xs);
+  background:rgba(212,162,64,.12);color:var(--gold);border:1px solid rgba(212,162,64,.3);margin-bottom:10px;font-weight:500;
+}
+.share-title{font-size:21px;font-weight:600;color:var(--bone);margin-bottom:8px;letter-spacing:.02em;line-height:1.3}
+.share-desc{font-size:13px;color:var(--bone2);line-height:1.65}
+.share-link-box{
+  display:flex;align-items:center;gap:8px;background:rgba(0,0,0,.35);
+  border:1px solid var(--line);border-radius:var(--r-sm);padding:6px 6px 6px 12px;margin-bottom:14px;
+}
+.share-url-input{
+  flex:1;min-width:0;background:transparent;border:0;outline:0;
+  font:inherit;font-size:12px;color:var(--bone);letter-spacing:.02em;
+}
+.share-copy-btn{
+  flex:none;font:inherit;font-size:12px;font-weight:600;padding:7px 15px;border-radius:var(--r-xs);
+  border:0;background:var(--bone);color:var(--ink);cursor:pointer;transition:all .18s ease;white-space:nowrap;
+}
+.share-copy-btn:hover{background:#fff;box-shadow:0 2px 10px rgba(255,255,255,.2)}
+.share-copy-btn.done{background:#2bb39c;color:#fff}
+.share-actions-row{
+  display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:16px;
+}
+.share-action-btn{
+  font:inherit;font-size:12.5px;padding:10px 12px;border-radius:var(--r-sm);
+  border:1px solid var(--line);background:rgba(255,255,255,.03);color:var(--bone);
+  cursor:pointer;display:inline-flex;align-items:center;justify-content:center;gap:6px;transition:.18s;
+}
+.share-action-btn:hover{background:rgba(255,255,255,.08);border-color:var(--line2)}
+.share-action-btn.primary{
+  background:linear-gradient(135deg,rgba(212,162,64,.22),rgba(212,162,64,.08));
+  border-color:rgba(212,162,64,.4);color:var(--gold2);font-weight:600;
+}
+.share-action-btn.primary:hover{background:rgba(212,162,64,.32);color:#fff}
+.share-tips{
+  font-size:11.5px;color:var(--bone3);line-height:1.75;border-top:1px solid var(--line);padding-top:14px;
+}
+.share-tips b{color:var(--bone2);font-weight:500}
+.pick-dfoot{display:flex;gap:10px}
+.share-pick-btn{
+  background:linear-gradient(135deg,rgba(212,162,64,.25),rgba(212,162,64,.1)) !important;
+  color:var(--gold2) !important;border:1px solid rgba(212,162,64,.4) !important;
+  display:inline-flex;align-items:center;justify-content:center;gap:6px;flex:1.2;
+}
+.share-pick-btn:hover{
+  background:linear-gradient(135deg,rgba(212,162,64,.38),rgba(212,162,64,.18)) !important;
+  color:#fff !important;border-color:var(--gold) !important;
+}
+.pick-dfoot button:last-child{flex:1}
+
 /* ---------- 页脚 ---------- */
 .site-footer{margin-top:60px;padding:36px 0 24px;border-top:1px solid var(--line);font-size:12px;line-height:1.8;color:var(--bone3);text-align:center}
 .site-footer a{color:var(--bone3);text-decoration:none;transition:color .16s}
@@ -504,6 +582,7 @@ h1 em{font-style:normal;background:linear-gradient(135deg,var(--red2),var(--gold
   <button class="fbtn wander" id="wanderBtn" title="随机漫游一处胜境"><span class="dice-icon">🎲</span><span>漫游</span></button>
   <button class="fbtn" id="fbtn">筛选<span class="dot" id="fdot">0</span></button>
   <button class="fbtn pick" id="pickBtn">已选 <b id="pickN">0</b></button>
+  <button class="fbtn share-site-btn" id="shareSiteBtn" title="分享大好河山图鉴给好友"><span>📤</span><span>分享</span></button>
   <span class="cnt" id="cnt"></span>
 </nav>
 
@@ -550,7 +629,10 @@ h1 em{font-style:normal;background:linear-gradient(135deg,var(--red2),var(--gold
 <aside class="drawer" id="pickDrawer">
   <div class="dhead"><h3 class="serif">我的候选</h3><button id="pickClear">清空</button></div>
   <div class="picks" id="picksBody"></div>
-  <div class="dfoot"><button id="pickClose">继续挑</button></div>
+  <div class="dfoot pick-dfoot">
+    <button id="sharePickBtn" class="share-pick-btn" title="分享我的心愿清单给好友"><span>📤</span><span>分享心愿单</span></button>
+    <button id="pickClose">继续挑</button>
+  </div>
 </aside>
 
 <main id="cardView">
@@ -598,6 +680,36 @@ h1 em{font-style:normal;background:linear-gradient(135deg,var(--red2),var(--gold
 </section>
 
 <div class="modal" id="modal"><div class="sheet" id="sheet"></div></div>
+
+<!-- 分享图鉴优雅面板 -->
+<div class="modal share-modal-wrap" id="shareModal">
+  <div class="share-card" id="shareCard">
+    <button class="share-close-btn" id="shareCloseBtn" aria-label="关闭">×</button>
+    <div class="share-header">
+      <div class="share-badge" id="shareBadge">中国山河图鉴</div>
+      <h3 class="serif share-title" id="shareTitle">分享山高水远皆可期</h3>
+      <p class="share-desc" id="shareDesc">记录中国境内152处山川旷野与地理坐标</p>
+    </div>
+    <div class="share-link-box">
+      <input type="text" class="share-url-input" id="shareUrlInput" readonly>
+      <button class="share-copy-btn" id="shareCopyLinkBtn">复制链接</button>
+    </div>
+    <div class="share-actions-row">
+      <button class="share-action-btn primary" id="shareNativeBtn">
+        <span>📲</span><span>唤起手机分享</span>
+      </button>
+      <button class="share-action-btn" id="shareCopyTextBtn">
+        <span>💬</span><span>复制推荐文案</span>
+      </button>
+    </div>
+    <div class="share-tips">
+      💡 <b>社交分享小贴士</b>：<br>
+      • <b>发微信 / 朋友圈</b>：复制链接直接粘贴发送，聊天窗口会自动生成带高清封面的图文卡片；在手机浏览器中也可点击自带的「分享」按钮。<br>
+      • <b>专属直达链接</b>：好友点击专属链接可直接打开该地点大图或同步心愿单，无需手动再次搜索。
+    </div>
+  </div>
+</div>
+
 <div class="toast" id="toast"></div>
 
 <script src="data.js"></script>
@@ -1482,6 +1594,13 @@ function openSheet(x){
 
   const st=starBtn(x);st.style.right='56px';st.style.top='15px';
   st.style.width='34px';st.style.height='34px';s.appendChild(st);
+
+  const shTopBtn=el('button','sheet-top-share');
+  shTopBtn.title='分享此地点';
+  shTopBtn.innerHTML='<svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"></circle><circle cx="6" cy="12" r="3"></circle><circle cx="18" cy="19" r="3"></circle><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line></svg>';
+  shTopBtn.onclick=e=>{e.stopPropagation();triggerShareSpot(x)};
+  s.appendChild(shTopBtn);
+
   const cap=el('div','cap');
   cap.appendChild(txt('h3','serif',x.n));
   cap.appendChild(txt('div','p',x.pv+' · '+(x.k==='c'?'核心胜境':'旷野秘境')+' · '+x.t+' 级'));
@@ -1503,6 +1622,11 @@ function openSheet(x){
     mapLocBtn.innerHTML='<span>在地图查看 ➔</span>';
     mapLocBtn.onclick=e=>{e.stopPropagation();flyToMap(x)};
     actions.appendChild(mapLocBtn);
+
+    const spotShareBtn=el('button','cpbtn');
+    spotShareBtn.innerHTML='📤 分享此景';
+    spotShareBtn.onclick=e=>{e.stopPropagation();triggerShareSpot(x)};
+    actions.appendChild(spotShareBtn);
 
     const cpBtn=el('button','cpbtn');
     cpBtn.textContent='复制坐标';
@@ -1560,7 +1684,14 @@ function openSheet(x){
   sheet.appendChild(inn);
   modal.classList.add('on');document.body.style.overflow='hidden';
 }
-function closeSheet(){modal.classList.remove('on');document.body.style.overflow=''}
+function closeSheet(){
+  modal.classList.remove('on');document.body.style.overflow='';
+  if(window.history&&window.history.replaceState&&window.location.search.includes('spot=')){
+    const u=new URL(window.location.href);
+    u.searchParams.delete('spot');
+    window.history.replaceState(null,'',u.pathname+(u.search?u.search:''));
+  }
+}
 modal.addEventListener('click',e=>{if(e.target===modal||e.target.classList.contains('close'))closeSheet()});
 
 let touchStartX=0,touchStartY=0;
@@ -1578,7 +1709,10 @@ sheet.addEventListener('touchend',e=>{
 },{passive:true});
 
 addEventListener('keydown',e=>{
-  if(e.key==='Escape'){closeSheet();closeD()}
+  if(e.key==='Escape'){
+    if($('shareModal')&&$('shareModal').classList.contains('on')){closeShareDialog();return}
+    closeSheet();closeD();closeP();
+  }
   if(modal.classList.contains('on')){
     if(e.key==='ArrowLeft'){navSheet(-1)}
     if(e.key==='ArrowRight'){navSheet(1)}
@@ -1656,8 +1790,211 @@ if(window.ResizeObserver){
     clearTimeout(t);t=setTimeout(fit,120);
   }).observe(mapbox);
 }
+// ---------- 分享交互系统 ----------
+const shareModal = $('shareModal');
+const shareUrlInput = $('shareUrlInput');
+const shareTitle = $('shareTitle');
+const shareDesc = $('shareDesc');
+const shareBadge = $('shareBadge');
+const shareCopyLinkBtn = $('shareCopyLinkBtn');
+const shareCopyTextBtn = $('shareCopyTextBtn');
+const shareNativeBtn = $('shareNativeBtn');
+const shareCloseBtn = $('shareCloseBtn');
+
+let currentShareData = null;
+
+function findSpotByName(query){
+  if(!query)return null;
+  const q=query.trim().toLowerCase();
+  let found=D.find(x=>x.n.toLowerCase()===q);
+  if(found)return found;
+  found=D.find(x=>x.n.toLowerCase().startsWith(q));
+  if(found)return found;
+  found=D.find(x=>x.n.toLowerCase().includes(q));
+  if(found)return found;
+  return D.find(x=>x.q&&x.q.toLowerCase().includes(q))||null;
+}
+
+function copyTextWithToast(text, successMsg, callback){
+  const done=()=>{
+    if(successMsg)showToast(successMsg);
+    if(callback)callback();
+  };
+  if(navigator.clipboard&&navigator.clipboard.writeText){
+    navigator.clipboard.writeText(text).then(done).catch(()=>{
+      fallbackCopy(text);
+      done();
+    });
+  }else{
+    fallbackCopy(text);
+    done();
+  }
+}
+
+function openShareDialog({badge, title, desc, url, copyText}){
+  currentShareData={badge, title, desc, url, copyText};
+  shareBadge.textContent=badge||'中国山河图鉴';
+  shareTitle.textContent=title||'山高水远皆可期 · 大好河山风光图鉴';
+  shareDesc.textContent=desc||'记录中国境内152处山川旷野与地理坐标，100%实景摄影。';
+  shareUrlInput.value=url||(window.location.origin+window.location.pathname);
+
+  shareCopyLinkBtn.textContent='复制链接';
+  shareCopyLinkBtn.classList.remove('done');
+
+  if(navigator.share&&/Mobi|Android|iPhone/i.test(navigator.userAgent)){
+    shareNativeBtn.style.display='inline-flex';
+  }else{
+    shareNativeBtn.style.display='none';
+  }
+
+  shareModal.classList.add('on');
+}
+
+function closeShareDialog(){
+  shareModal.classList.remove('on');
+}
+
+if(shareCloseBtn)shareCloseBtn.onclick=closeShareDialog;
+if(shareModal)shareModal.onclick=e=>{if(e.target===shareModal)closeShareDialog()};
+
+if(shareCopyLinkBtn)shareCopyLinkBtn.onclick=()=>{
+  const url=shareUrlInput.value;
+  copyTextWithToast(url,'已复制分享链接！可直接粘贴发给好友', ()=>{
+    shareCopyLinkBtn.textContent='✓ 已复制';
+    shareCopyLinkBtn.classList.add('done');
+    setTimeout(()=>{
+      shareCopyLinkBtn.textContent='复制链接';
+      shareCopyLinkBtn.classList.remove('done');
+    },2000);
+  });
+};
+
+if(shareCopyTextBtn)shareCopyTextBtn.onclick=()=>{
+  if(!currentShareData||!currentShareData.copyText)return;
+  copyTextWithToast(currentShareData.copyText,'已复制图文推荐语！快去发给好友或朋友圈吧');
+};
+
+if(shareNativeBtn)shareNativeBtn.onclick=()=>{
+  if(!currentShareData)return;
+  if(navigator.share){
+    navigator.share({
+      title:currentShareData.title,
+      text:currentShareData.desc,
+      url:currentShareData.url
+    }).catch(()=>{});
+  }
+};
+
+function triggerShareSite(){
+  const base=window.location.origin+window.location.pathname;
+  const title='山高水远皆可期 · 大好河山风光图鉴';
+  const desc='记录中国境内152处山川旷野与地理坐标，100%全收录实景高清摄影、最佳月份与旅行指南。';
+  const copyText=`🏔️ 山高水远皆可期 · 大好河山风光图鉴\n记录中国境内152处山川旷野与地理坐标，100%全收录实景摄影与旅行指南！\n👉 点击探索：${base}`;
+
+  if(navigator.share&&/Mobi|Android|iPhone/i.test(navigator.userAgent)){
+    navigator.share({
+      title:title,
+      text:desc,
+      url:base
+    }).catch(()=>{
+      openShareDialog({badge:'152处胜境全收录',title:'大好河山风光图鉴',desc:desc,url:base,copyText:copyText});
+    });
+  }else{
+    openShareDialog({badge:'152处胜境全收录',title:'大好河山风光图鉴',desc:desc,url:base,copyText:copyText});
+  }
+}
+
+function triggerShareSpot(x){
+  const base=window.location.origin+window.location.pathname;
+  const spotUrl=`${base}?spot=${encodeURIComponent(x.n)}`;
+  const title=`${x.n} · 大好河山风光图鉴`;
+  const desc=`【${x.pv} · ${x.k==='c'?'核心胜境':'旷野秘境'} · ${x.t}级】${x.d.slice(0,65)}... 最佳月份：${x.mo}`;
+  const copyText=`🏔️ 向你推荐「${x.pv} · ${x.n}」（${x.t}级胜境）：\n${x.d}\n🌟 最佳观景月份：${x.mo}\n📍 查看实景大图与坐标定位：${spotUrl}`;
+
+  if(navigator.share&&/Mobi|Android|iPhone/i.test(navigator.userAgent)){
+    navigator.share({
+      title:title,
+      text:`${x.n}（${x.pv}）- ${x.d.slice(0,50)}...`,
+      url:spotUrl
+    }).catch(()=>{
+      openShareDialog({badge:`${x.pv} · ${x.t}级`,title:x.n,desc:desc,url:spotUrl,copyText:copyText});
+    });
+  }else{
+    openShareDialog({badge:`${x.pv} · ${x.t}级`,title:x.n,desc:desc,url:spotUrl,copyText:copyText});
+  }
+}
+
+function triggerSharePicks(){
+  const pickedList=D.filter(x=>isPicked(x));
+  if(!pickedList.length){
+    showToast('心愿单还是空的，先在卡片或详情页点击星标收藏吧！');
+    return;
+  }
+  const base=window.location.origin+window.location.pathname;
+  const names=pickedList.map(x=>x.n).join(',');
+  const picksUrl=`${base}?picks=${encodeURIComponent(names)}`;
+  const title=`我的旅行心愿清单（${pickedList.length}处）`;
+  const spotSummary=pickedList.slice(0,6).map((x,i)=>`${i+1}. ${x.n} (${x.pv})`).join('\n')+(pickedList.length>6?`\n...等共${pickedList.length}处`:'');
+  const desc=`精选了 ${pickedList.length} 处想去的大好河山胜境，点击链接即可一键同步查阅路线与坐标。`;
+  const copyText=`🗺️ 这是我精选的旅行目的地心愿单（共 ${pickedList.length} 处）：\n${spotSummary}\n\n👉 点击链接直接同步清单并在地图查看：\n${picksUrl}`;
+
+  if(navigator.share&&/Mobi|Android|iPhone/i.test(navigator.userAgent)){
+    navigator.share({
+      title:title,
+      text:`精选了${pickedList.length}处旅行目的地：${pickedList.map(x=>x.n).slice(0,3).join('、')}...`,
+      url:picksUrl
+    }).catch(()=>{
+      openShareDialog({badge:`已选 ${pickedList.length} 处地点`,title:title,desc:desc,url:picksUrl,copyText:copyText});
+    });
+  }else{
+    openShareDialog({badge:`已选 ${pickedList.length} 处地点`,title:title,desc:desc,url:picksUrl,copyText:copyText});
+  }
+}
+
+if($('shareSiteBtn'))$('shareSiteBtn').onclick=triggerShareSite;
+if($('sharePickBtn'))$('sharePickBtn').onclick=triggerSharePicks;
+
+function handleUrlDeepLink(){
+  const params=new URLSearchParams(window.location.search);
+  const spotParam=params.get('spot');
+  const picksParam=params.get('picks');
+  const viewParam=params.get('view');
+
+  if(viewParam==='map'&&$('vMap'))$('vMap').click();
+
+  if(picksParam){
+    const names=decodeURIComponent(picksParam).split(',').map(s=>s.trim()).filter(Boolean);
+    let count=0;
+    names.forEach(name=>{
+      const found=findSpotByName(name);
+      if(found){
+        PICKS.add(pid(found));
+        count++;
+      }
+    });
+    if(count>0){
+      try{localStorage.setItem(KEY,JSON.stringify([...PICKS]))}catch(_){}
+      syncPickBtn();
+      showToast(`已为你同步好友分享的 ${count} 处心愿目的地！`);
+      setTimeout(()=>openP(),600);
+    }
+  }
+
+  if(spotParam){
+    const name=decodeURIComponent(spotParam).trim();
+    const target=findSpotByName(name);
+    if(target){
+      setTimeout(()=>{
+        openSheet(target);
+        showToast(`已打开分享的地点：${target.n.split(/[·/+–]/)[0]}`);
+      },350);
+    }
+  }
+}
+
 syncPills();
 render();
+handleUrlDeepLink();
 </script>
 </body>
 </html>
