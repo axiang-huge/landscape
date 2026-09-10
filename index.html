@@ -222,7 +222,11 @@ h1 em{font-style:normal;background:linear-gradient(135deg,var(--red2),var(--gold
 
 /* ---------- 地图 ---------- */
 #mapView{display:none;position:relative}
-#mapView.on{display:block}
+#mapView.on{display:block;animation:mapFadeIn .3s cubic-bezier(.16,1,.3,1) forwards}
+.view-entering{animation:cardFadeIn .28s cubic-bezier(.16,1,.3,1) forwards}
+@keyframes mapFadeIn{from{opacity:0;transform:scale(.99)}to{opacity:1;transform:scale(1)}}
+@keyframes cardFadeIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+
 .mapbox{position:relative;width:100%;height:calc(100vh - var(--bar));overflow:hidden;
   background:radial-gradient(120% 90% at 50% 0%,#151a22,#090b0e 70%);cursor:grab;touch-action:none}
 .mapbox.drag{cursor:grabbing}
@@ -239,20 +243,45 @@ h1 em{font-style:normal;background:linear-gradient(135deg,var(--red2),var(--gold
   box-shadow:0 4px 14px rgba(0,0,0,.75),0 0 0 1px rgba(0,0,0,.6);transition:transform .18s,box-shadow .18s}
 .dot.S{border-color:var(--red);width:48px;height:48px;box-shadow:0 4px 16px var(--red-glow),0 0 0 1px rgba(0,0,0,.6)}
 .dot img,.dot svg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
-.dot img{opacity:0;transition:opacity .4s}
+.dot img{opacity:0;transition:opacity .35s}
 .dot img.in{opacity:1}
 .pin:hover .dot{transform:scale(1.14);box-shadow:0 8px 24px rgba(0,0,0,.85),0 0 0 2px rgba(255,255,255,.3)}
 .pin .lb{position:absolute;left:50%;top:calc(100% + 5px);transform:translateX(-50%);
   font-size:10.5px;white-space:nowrap;color:var(--bone);text-shadow:0 1px 6px #000,0 0 10px #000;
   pointer-events:none;font-family:"Songti SC",serif}
 .pin .pk{position:absolute;top:-3px;right:-3px;width:15px;height:15px;border-radius:50%;
-  background:var(--gold);border:2px solid var(--ink);display:none}
+  background:var(--gold);border:2px solid var(--ink);display:none;z-index:8}
 .pin.picked .pk{display:block}
-.clus{min-width:34px;height:34px;padding:0 9px;border-radius:17px;background:rgba(20,25,33,.94);
-  border:1px solid #455060;backdrop-filter:blur(8px);display:flex;align-items:center;justify-content:center;
-  font-size:12.5px;font-weight:600;color:var(--bone);box-shadow:0 4px 18px rgba(0,0,0,.6)}
-.clus.big{min-width:42px;height:42px;font-size:14px}
-.clus i{font-style:normal;font-size:9px;color:var(--bone3);margin-left:3px}
+
+/* 聚合点叠层实景照片质感与精致徽标 */
+.dot.clus-dot{
+  box-shadow:-3px -3px 0 1px rgba(255,255,255,.22),-6px -6px 0 1px rgba(255,255,255,.1),0 6px 20px rgba(0,0,0,.85);
+}
+.dot.clus-dot.S{
+  border-color:var(--red);
+  box-shadow:-3px -3px 0 1px rgba(230,70,55,.45),-6px -6px 0 1px rgba(230,70,55,.2),0 6px 20px var(--red-glow);
+}
+.pin:hover .dot.clus-dot{
+  transform:scale(1.15);
+  box-shadow:-4px -4px 0 1px rgba(255,255,255,.35),-8px -8px 0 1px rgba(255,255,255,.18),0 12px 28px rgba(0,0,0,.92);
+}
+.pin:hover .dot.clus-dot.S{
+  box-shadow:-4px -4px 0 1px rgba(230,70,55,.6),-8px -8px 0 1px rgba(230,70,55,.3),0 12px 28px var(--red-glow);
+}
+.clus-badge{
+  position:absolute;right:-4px;top:-4px;z-index:7;
+  background:var(--bone);color:var(--ink);
+  font-size:10.5px;font-weight:700;line-height:1;padding:2px 5.5px;
+  border-radius:var(--r-full);border:1.5px solid var(--ink);
+  box-shadow:0 2px 8px rgba(0,0,0,.7);display:flex;align-items:center;gap:1.5px;
+}
+.clus-badge.has-s{
+  background:var(--red);color:#fff;border-color:var(--ink);
+  box-shadow:0 2px 8px rgba(210,40,40,.6);
+}
+.clus-badge small{font-size:8.5px;font-weight:500;opacity:.9}
+.clus-lb{color:var(--gold)!important;letter-spacing:.02em}
+
 .mapui{position:absolute;right:16px;bottom:calc(20px + env(safe-area-inset-bottom));z-index:20;
   display:flex;flex-direction:column;gap:8px}
 .mapui button{width:40px;height:40px;border-radius:var(--r-sm);border:1px solid var(--line2);background:rgba(19,23,30,.88);
@@ -266,18 +295,29 @@ h1 em{font-style:normal;background:linear-gradient(135deg,var(--red2),var(--gold
   backdrop-filter:blur(8px);padding:7px 14px;border-radius:var(--r-full);border:1px solid var(--line)}
 .mapleg span{display:flex;align-items:center;gap:6px}
 .mapleg i{width:11px;height:11px;border-radius:50%;display:block;border:2.5px solid;background:transparent!important}
+.leg-clus{width:11px;height:11px;border-radius:50%;border:1.5px solid var(--bone2);
+  box-shadow:-2px -2px 0 0 rgba(255,255,255,.35);display:inline-block}
 
 /* 地图悬浮轻量预览卡片 */
 .map-tooltip{position:absolute;z-index:40;transform:translate(-50%,-100%) translateY(-14px);
   background:rgba(17,21,28,.95);backdrop-filter:blur(16px);border:1px solid var(--line2);
-  border-radius:var(--r-md);padding:10px;width:220px;box-shadow:0 14px 36px rgba(0,0,0,.75),0 0 0 1px rgba(255,255,255,.08);
+  border-radius:var(--r-md);padding:10px;width:230px;box-shadow:0 14px 36px rgba(0,0,0,.75),0 0 0 1px rgba(255,255,255,.08);
   pointer-events:auto;display:none}
 .map-tooltip.on{display:flex;flex-direction:column;gap:8px;animation:tipPop .2s cubic-bezier(.2,.8,.3,1)}
+.map-tooltip.tip-below{transform:translate(-50%,0) translateY(14px)}
 @keyframes tipPop{from{opacity:0;transform:translate(-50%,-95%) translateY(-10px)}to{opacity:1;transform:translate(-50%,-100%) translateY(-14px)}}
 .tip-thumb{width:100%;height:105px;border-radius:var(--r-sm);overflow:hidden;background:#0a0c0f;position:relative}
 .tip-thumb img,.tip-thumb svg{width:100%;height:100%;object-fit:cover;display:block}
 .tip-title{font-family:"Songti SC",serif;font-size:15px;font-weight:600;color:var(--bone);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.tip-sub{font-size:11px;color:var(--bone3);letter-spacing:.04em}
+.tip-sub{font-size:11px;color:var(--bone3);letter-spacing:.04em;line-height:1.4}
+.tip-list{display:flex;flex-direction:column;gap:5px;max-height:120px;overflow-y:auto;padding-right:2px}
+.tip-item-btn{display:flex;align-items:center;justify-content:space-between;width:100%;
+  padding:5px 8px;border-radius:var(--r-xs);border:1px solid var(--line);
+  background:rgba(255,255,255,.03);color:var(--bone);font:inherit;font-size:11.5px;
+  cursor:pointer;text-align:left;transition:.15s}
+.tip-item-btn:hover{background:rgba(255,255,255,.08);border-color:var(--line2)}
+.tip-item-btn b{white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:145px;font-weight:500}
+.tip-item-btn span{font-size:10px;color:var(--bone3);flex:none}
 .tip-btn{margin-top:2px;width:100%;font:inherit;font-size:12px;padding:6px;border-radius:var(--r-xs);
   border:0;background:var(--bone);color:var(--ink);font-weight:600;cursor:pointer;transition:opacity .15s}
 .tip-btn:hover{opacity:.9}
@@ -457,6 +497,7 @@ h1 em{font-style:normal;background:linear-gradient(135deg,var(--red2),var(--gold
     <div class="mapleg">
       <span><i style="border-color:var(--red)"></i>红圈 S 级胜境</span>
       <span><i style="border-color:var(--glacier)"></i>蓝圈 A 级胜境</span>
+      <span><i class="leg-clus"></i>多点照片聚合</span>
     </div>
     <div class="mapui">
       <button id="zin" title="放大">
@@ -879,27 +920,111 @@ CHINA.p.forEach(([name,rings])=>{
   mg.appendChild(p);provEls[name]=p;
 });
 let view={k:1,tx:0,ty:0},vw=0,vh=0;
-function fit(){
-  const r=mapbox.getBoundingClientRect();vw=r.width;vh=r.height;
-  msvg.setAttribute('viewBox','0 0 '+vw+' '+vh);
-  view.k=fitK();
-  if(vw<600)view.k=Math.max(view.k,(vh*.72)/H);
-  view.tx=(vw-W*view.k)/2-OX*view.k;
-  view.ty=(vh-H*view.k)/2-OY*view.k;
-  apply();
-}
-function apply(){
-  mg.setAttribute('transform','translate('+view.tx+','+view.ty+') scale('+view.k+')');
-  drawPins();
-}
-function zoomAt(cx,cy,f){
-  const nk=Math.max(view.k*.55,Math.min(view.k*f,view.k*40));
-  const k0=view.k,k1=Math.min(Math.max(nk,fitK()*.9),fitK()*22);
-  view.tx=cx-(cx-view.tx)*(k1/k0);view.ty=cy-(cy-view.ty)*(k1/k0);view.k=k1;apply();
-}
+let animId=null,inertiaId=null,isDraggingMap=false;
+function cancelAnim(){if(animId){cancelAnimationFrame(animId);animId=null}}
+function cancelInertia(){if(inertiaId){cancelAnimationFrame(inertiaId);inertiaId=null}}
 function fitK(){const pad=vw<600?12:34;return Math.min((vw-pad*2)/W,(vh-pad*2)/H)}
 
+function clampView(){
+  const minK=fitK()*.85,maxK=fitK()*26;
+  view.k=Math.min(Math.max(view.k,minK),maxK);
+  const pad=vw<600?60:100;
+  const minTx=pad-(OX+W)*view.k,maxTx=vw-pad-OX*view.k;
+  if(minTx<=maxTx)view.tx=Math.min(Math.max(view.tx,minTx),maxTx);
+  else view.tx=(vw-W*view.k)/2-OX*view.k;
+  const minTy=pad-(OY+H)*view.k,maxTy=vh-pad-OY*view.k;
+  if(minTy<=maxTy)view.ty=Math.min(Math.max(view.ty,minTy),maxTy);
+  else view.ty=(vh-H*view.k)/2-OY*view.k;
+}
+
+function getFitTarget(){
+  const r=mapbox.getBoundingClientRect();
+  const w=r.width||vw,h=r.height||vh;
+  const pad=w<600?12:34;
+  let k=Math.min((w-pad*2)/W,(h-pad*2)/H);
+  if(w<600)k=Math.max(k,(h*.72)/H);
+  const tx=(w-W*k)/2-OX*k;
+  const ty=(h-H*k)/2-OY*k;
+  return {k,tx,ty,w,h};
+}
+
+function fit(){
+  cancelAnim();cancelInertia();
+  const f=getFitTarget();
+  vw=f.w;vh=f.h;
+  msvg.setAttribute('viewBox','0 0 '+vw+' '+vh);
+  view.k=f.k;view.tx=f.tx;view.ty=f.ty;
+  apply();
+}
+
+function smoothFit(){
+  const f=getFitTarget();
+  vw=f.w;vh=f.h;
+  msvg.setAttribute('viewBox','0 0 '+vw+' '+vh);
+  smoothAnimateTo(f.tx,f.ty,f.k,360);
+}
+
+function apply(){
+  mg.setAttribute('transform','translate('+view.tx.toFixed(2)+','+view.ty.toFixed(2)+') scale('+view.k.toFixed(4)+')');
+  drawPins();
+}
+
+function smoothAnimateTo(targetTx,targetTy,targetK,duration=300,onComplete){
+  cancelAnim();cancelInertia();
+  const startTx=view.tx,startTy=view.ty,startK=view.k;
+  const startTime=performance.now();
+  function easeOutCubic(t){return 1-Math.pow(1-t,3)}
+  function step(now){
+    const elapsed=now-startTime;
+    const progress=Math.min(1,elapsed/duration);
+    const ease=easeOutCubic(progress);
+    view.tx=startTx+(targetTx-startTx)*ease;
+    view.ty=startTy+(targetTy-startTy)*ease;
+    view.k=startK+(targetK-startK)*ease;
+    clampView();
+    apply();
+    if(progress<1){
+      animId=requestAnimationFrame(step);
+    }else{
+      animId=null;
+      if(onComplete)onComplete();
+    }
+  }
+  animId=requestAnimationFrame(step);
+}
+
+function smoothZoomAt(cx,cy,factor,duration=280){
+  const minK=fitK()*.9,maxK=fitK()*26;
+  const nextK=Math.min(Math.max(view.k*factor,minK),maxK);
+  if(Math.abs(nextK-view.k)<0.001)return;
+  const targetTx=cx-(cx-view.tx)*(nextK/view.k);
+  const targetTy=cy-(cy-view.ty)*(nextK/view.k);
+  smoothAnimateTo(targetTx,targetTy,nextK,duration);
+}
+
+function zoomAt(cx,cy,f){
+  cancelAnim();cancelInertia();
+  const minK=fitK()*.9,maxK=fitK()*26;
+  const k0=view.k,k1=Math.min(Math.max(view.k*f,minK),maxK);
+  view.tx=cx-(cx-view.tx)*(k1/k0);view.ty=cy-(cy-view.ty)*(k1/k0);view.k=k1;
+  clampView();
+  apply();
+}
+
 let mapTipTimer=0;
+function positionTooltip(tip,px,py){
+  const pad=120;
+  const clampedX=Math.max(pad,Math.min(px,vw-pad));
+  tip.style.left=clampedX+'px';
+  if(py<185){
+    tip.style.top=(py+16)+'px';
+    tip.classList.add('tip-below');
+  }else{
+    tip.style.top=py+'px';
+    tip.classList.remove('tip-below');
+  }
+}
+
 function showMapTip(x,px,py){
   clearTimeout(mapTipTimer);
   const tip=$('mapTooltip');
@@ -908,19 +1033,62 @@ function showMapTip(x,px,py){
   const th=$('tipThumb');
   th.textContent='';
   if(x.img){
-    const im=el('img');im.src=IMG(x.img,'s');im.alt='';th.appendChild(im);
+    const im=el('img');im.src=IMG(x.img,'s');im.alt=x.n;th.appendChild(im);
   }else{
     th.appendChild(sceneNode(x.a,x.pl,D.indexOf(x)+7));
   }
-  tip.style.left=px+'px';
-  tip.style.top=py+'px';
-  tip.classList.add('on');
-  $('tipBtn').onclick=e=>{e.stopPropagation();openSheet(x)};
+  const oldList=tip.querySelector('.tip-list');
+  if(oldList)oldList.remove();
+  const btn=$('tipBtn');
+  btn.style.display='';
+  btn.textContent='查看风光详情 ➔';
+  btn.onclick=e=>{e.stopPropagation();openSheet(x)};
   tip.onclick=e=>{e.stopPropagation();openSheet(x)};
+  positionTooltip(tip,px,py);
+  tip.classList.add('on');
 }
+
+function showClusterTip(g,rep,px,py){
+  clearTimeout(mapTipTimer);
+  const tip=$('mapTooltip');
+  $('tipTitle').textContent=`${rep.pv} · ${g.length} 处胜境集合`;
+  $('tipSub').textContent=`已聚合 ${g.length} 处风景名胜，点击可展开探索`;
+  const th=$('tipThumb');
+  th.textContent='';
+  if(rep.img){
+    const im=el('img');im.src=IMG(rep.img,'s');im.alt=rep.n;th.appendChild(im);
+  }else{
+    th.appendChild(sceneNode(rep.a,rep.pl,D.indexOf(rep)+7));
+  }
+  let listEl=tip.querySelector('.tip-list');
+  if(!listEl){
+    listEl=el('div','tip-list');
+    tip.insertBefore(listEl,$('tipBtn'));
+  }
+  listEl.textContent='';
+  g.slice(0,4).forEach(p=>{
+    const itemBtn=el('button','tip-item-btn');
+    const b=el('b');b.textContent=p.d.n;itemBtn.appendChild(b);
+    const s=el('span');s.textContent=`${p.d.t}级 · ${p.d.mo}`;itemBtn.appendChild(s);
+    itemBtn.onclick=e=>{e.stopPropagation();openSheet(p.d)};
+    listEl.appendChild(itemBtn);
+  });
+  const btn=$('tipBtn');
+  btn.style.display='';
+  btn.textContent='放大并展开此区域 ➔';
+  btn.onclick=e=>{e.stopPropagation();tip.classList.remove('on');smoothZoomAt(px,py,2.3)};
+  tip.onclick=e=>{e.stopPropagation();tip.classList.remove('on');smoothZoomAt(px,py,2.3)};
+  positionTooltip(tip,px,py);
+  tip.classList.add('on');
+}
+
 function scheduleHideMapTip(){
   clearTimeout(mapTipTimer);
-  mapTipTimer=setTimeout(()=>{$('mapTooltip').classList.remove('on')},220);
+  mapTipTimer=setTimeout(()=>{
+    $('mapTooltip').classList.remove('on');
+    const oldList=$('mapTooltip').querySelector('.tip-list');
+    if(oldList)oldList.remove();
+  },220);
 }
 $('mapTooltip').addEventListener('mouseenter',()=>clearTimeout(mapTipTimer));
 $('mapTooltip').addEventListener('mouseleave',scheduleHideMapTip);
@@ -928,58 +1096,102 @@ $('mapTooltip').addEventListener('mouseleave',scheduleHideMapTip);
 function drawPins(){
   pins.textContent='';
   const list=D.filter(x=>x.ll&&match(x));
-  const pts=list.map(x=>{const[a,b]=pj(x.ll[0],x.ll[1]);
+  let pts=list.map(x=>{const[a,b]=pj(x.ll[0],x.ll[1]);
     return {x:(a-BB.x0)*view.k+view.tx,y:(b-BB.y0)*view.k+view.ty,d:x}})
-    .filter(p=>p.x>-60&&p.x<vw+60&&p.y>-60&&p.y<vh+60);
-  const R=vw<600?58:66,buckets=new Map();
+    .filter(p=>p.x>-80&&p.x<vw+80&&p.y>-80&&p.y<vh+80);
+
+  if(view.k>fitK()*5.2){
+    for(let i=0;i<pts.length;i++){
+      for(let j=i+1;j<pts.length;j++){
+        const dx=pts[i].x-pts[j].x,dy=pts[i].y-pts[j].y;
+        if(Math.hypot(dx,dy)<14){
+          pts[i].x-=16;pts[j].x+=16;
+        }
+      }
+    }
+  }
+
+  const R=vw<600?42:46,buckets=new Map();
   pts.forEach(p=>{const key=Math.round(p.x/R)+'_'+Math.round(p.y/R);
     if(!buckets.has(key))buckets.set(key,[]);buckets.get(key).push(p)});
-  const showLabel=view.k>fitK()*2.6;
+  const showLabel=view.k>fitK()*2.2;
   buckets.forEach(g=>{
     const mx=g.reduce((s,p)=>s+p.x,0)/g.length,my=g.reduce((s,p)=>s+p.y,0)/g.length;
-    const pin=el('div','pin');pin.style.left=mx+'px';pin.style.top=my+'px';
+    const pin=el('div','pin');pin.style.left=mx.toFixed(1)+'px';pin.style.top=my.toFixed(1)+'px';
     if(g.length===1){
       const x=g[0].d;
       if(isPicked(x))pin.classList.add('picked');
       const d=el('div','dot '+x.t);
       d.appendChild(sceneNode(x.a,x.pl,D.indexOf(x)+7));
       if(x.img){
-        const im=el('img');im.decoding='async';im.alt='';im.loading='lazy';
-        im.onload=()=>im.classList.add('in');im.onerror=()=>im.remove();
-        im.src=IMG(x.img,'s');d.appendChild(im);
+        const im=el('img');im.decoding='async';im.alt=x.n;
+        im.onload=()=>im.classList.add('in');
+        im.src=IMG(x.img,'s');
+        if(im.complete)im.classList.add('in');
+        d.appendChild(im);
       }
       d.appendChild(el('span','pk'));
       pin.appendChild(d);
       if(showLabel||x.t==='S'){const l=txt('span','lb',x.n.split(/[·/+–]/)[0].trim());pin.appendChild(l)}
-      
-      pin.addEventListener('mouseenter',()=>{showMapTip(x,mx,my)});
+      pin.addEventListener('mouseenter',()=>{if(!isDraggingMap)showMapTip(x,mx,my)});
       pin.addEventListener('mouseleave',scheduleHideMapTip);
-      pin.onclick=ev=>{ev.stopPropagation();openSheet(x)};
+      pin.onclick=ev=>{ev.stopPropagation();if(isDraggingMap)return;openSheet(x)};
     }else{
-      const c=el('div','clus'+(g.length>7?' big':''));
-      c.appendChild(document.createTextNode(String(g.length)));
-      if(g.some(p=>p.d.t==='S'))c.appendChild(txt('i','','S'));
-      pin.appendChild(c);
-      pin.onclick=ev=>{ev.stopPropagation();zoomAt(mx,my,2.3)};
+      const hasS=g.some(p=>p.d.t==='S');
+      const rep=g.find(p=>p.d.t==='S')?.d||g[0].d;
+      if(g.some(p=>isPicked(p.d)))pin.classList.add('picked');
+      const d=el('div','dot clus-dot '+(hasS?'S':''));
+      d.appendChild(sceneNode(rep.a,rep.pl,D.indexOf(rep)+7));
+      if(rep.img){
+        const im=el('img');im.decoding='async';im.alt=rep.n;
+        im.onload=()=>im.classList.add('in');
+        im.src=IMG(rep.img,'s');
+        if(im.complete)im.classList.add('in');
+        d.appendChild(im);
+      }
+      const badge=el('div','clus-badge'+(hasS?' has-s':''));
+      badge.innerHTML=`<span>${g.length}</span><small>处</small>`;
+      d.appendChild(badge);
+      d.appendChild(el('span','pk'));
+      pin.appendChild(d);
+      const l=txt('span','lb clus-lb',`${rep.pv} · ${g.length}处`);
+      pin.appendChild(l);
+      pin.addEventListener('mouseenter',()=>{if(!isDraggingMap)showClusterTip(g,rep,mx,my)});
+      pin.addEventListener('mouseleave',scheduleHideMapTip);
+      pin.onclick=ev=>{
+        ev.stopPropagation();
+        if(isDraggingMap)return;
+        if(view.k>fitK()*14){
+          showClusterTip(g,rep,mx,my);
+        }else{
+          smoothZoomAt(mx,my,2.3);
+        }
+      };
     }
     pins.appendChild(pin);
   });
-  $('hint').textContent = view.k>fitK()*1.3
+  $('hint').textContent=view.k>fitK()*1.3
     ? list.length+' 个地点 · 点圆点看详情'
-    : '滚轮或双指缩放 · 拖动平移 · 点数字聚合';
+    : '双指/滚轮缩放 · 拖动平移 · 点聚合点展开';
 }
 
 let drag=null,pointers=new Map(),pinchD=0;
+let velX=0,velY=0,lastClientX=0,lastClientY=0,lastMoveTime=0;
 const DRAG_TH=5;
+
 mapbox.addEventListener('pointerdown',e=>{
+  cancelAnim();cancelInertia();
   $('mapTooltip').classList.remove('on');
   pointers.set(e.pointerId,{x:e.clientX,y:e.clientY});
-  if(pointers.size===1){drag={id:e.pointerId,x:e.clientX,y:e.clientY,tx:view.tx,ty:view.ty,moved:0,cap:false}}
-  else if(pointers.size===2){
+  if(pointers.size===1){
+    drag={id:e.pointerId,x:e.clientX,y:e.clientY,tx:view.tx,ty:view.ty,moved:0,cap:false};
+    velX=0;velY=0;lastClientX=e.clientX;lastClientY=e.clientY;lastMoveTime=performance.now();
+  }else if(pointers.size===2){
     try{mapbox.setPointerCapture(e.pointerId)}catch(_){}
     const p=[...pointers.values()];pinchD=Math.hypot(p[0].x-p[1].x,p[0].y-p[1].y);drag=null;
   }
 });
+
 mapbox.addEventListener('pointermove',e=>{
   if(!pointers.has(e.pointerId))return;
   pointers.set(e.pointerId,{x:e.clientX,y:e.clientY});
@@ -994,20 +1206,85 @@ mapbox.addEventListener('pointermove',e=>{
   drag.moved=Math.max(drag.moved,Math.hypot(dx,dy));
   if(drag.moved<DRAG_TH)return;
   if(!drag.cap){
-    drag.cap=true;mapbox.classList.add('drag');
+    drag.cap=true;isDraggingMap=true;mapbox.classList.add('drag');
     try{mapbox.setPointerCapture(e.pointerId)}catch(_){}
   }
-  view.tx=drag.tx+dx;view.ty=drag.ty+dy;apply();
+  view.tx=drag.tx+dx;view.ty=drag.ty+dy;
+  clampView();
+  apply();
+
+  const now=performance.now(),dt=now-lastMoveTime;
+  if(dt>8){
+    const instVx=(e.clientX-lastClientX)/dt*16;
+    const instVy=(e.clientY-lastClientY)/dt*16;
+    velX=velX*0.35+instVx*0.65;
+    velY=velY*0.35+instVy*0.65;
+    lastClientX=e.clientX;lastClientY=e.clientY;lastMoveTime=now;
+  }
 });
-function up(e){pointers.delete(e.pointerId);if(pointers.size<2)pinchD=0;
-  if(pointers.size===0){drag=null;mapbox.classList.remove('drag')}}
+
+function startInertia(vx,vy){
+  cancelInertia();
+  let currVx=vx,currVy=vy;
+  function step(){
+    currVx*=0.925;currVy*=0.925;
+    if(Math.hypot(currVx,currVy)<0.2){inertiaId=null;return}
+    const prevTx=view.tx,prevTy=view.ty;
+    view.tx+=currVx;view.ty+=currVy;
+    clampView();
+    if(Math.abs(view.tx-prevTx)<0.01)currVx=0;
+    if(Math.abs(view.ty-prevTy)<0.01)currVy=0;
+    apply();
+    inertiaId=requestAnimationFrame(step);
+  }
+  inertiaId=requestAnimationFrame(step);
+}
+
+function up(e){
+  pointers.delete(e.pointerId);if(pointers.size<2)pinchD=0;
+  if(pointers.size===0){
+    const wasMoved=drag&&drag.moved>=DRAG_TH;
+    drag=null;mapbox.classList.remove('drag');
+    if(wasMoved){
+      setTimeout(()=>{isDraggingMap=false},60);
+      const timeSinceLast=performance.now()-lastMoveTime;
+      if(timeSinceLast<90){
+        const speed=Math.hypot(velX,velY);
+        if(speed>1.0){
+          const maxSpd=42;
+          if(speed>maxSpd){velX=(velX/speed)*maxSpd;velY=(velY/speed)*maxSpd}
+          startInertia(velX,velY);
+        }
+      }
+    }else{
+      isDraggingMap=false;
+    }
+  }
+}
 mapbox.addEventListener('pointerup',up);mapbox.addEventListener('pointercancel',up);
-mapbox.addEventListener('wheel',e=>{e.preventDefault();
+
+mapbox.addEventListener('wheel',e=>{
+  e.preventDefault();cancelAnim();cancelInertia();
   const r=mapbox.getBoundingClientRect();
-  zoomAt(e.clientX-r.left,e.clientY-r.top,e.deltaY<0?1.16:1/1.16)},{passive:false});
-$('zin').onclick=()=>zoomAt(vw/2,vh/2,1.5);
-$('zout').onclick=()=>zoomAt(vw/2,vh/2,1/1.5);
-$('zfit').onclick=fit;
+  const cx=e.clientX-r.left,cy=e.clientY-r.top;
+  let factor;
+  if(Math.abs(e.deltaY)<40){
+    factor=Math.exp(-e.deltaY*0.0032);
+  }else{
+    factor=e.deltaY<0?1.18:1/1.18;
+  }
+  zoomAt(cx,cy,factor);
+},{passive:false});
+
+mapbox.addEventListener('dblclick',e=>{
+  e.preventDefault();
+  const r=mapbox.getBoundingClientRect();
+  smoothZoomAt(e.clientX-r.left,e.clientY-r.top,1.85);
+});
+
+$('zin').onclick=()=>smoothZoomAt(vw/2,vh/2,1.55);
+$('zout').onclick=()=>smoothZoomAt(vw/2,vh/2,1/1.55);
+$('zfit').onclick=smoothFit;
 addEventListener('resize',()=>{if($('mapView').classList.contains('on'))fit()});
 
 function render(){
@@ -1117,20 +1394,45 @@ function closeSheet(){modal.classList.remove('on');document.body.style.overflow=
 modal.addEventListener('click',e=>{if(e.target===modal||e.target.classList.contains('close'))closeSheet()});
 addEventListener('keydown',e=>{if(e.key==='Escape'){closeSheet();closeD()}});
 
+let lastScrollY = 0;
+let mapInitialized = false;
+
 $('vCard').onclick=()=>{
+  if($('vCard').classList.contains('on'))return;
   $('vCard').classList.add('on');$('vMap').classList.remove('on');
-  $('cardView').style.display='';$('mapView').classList.remove('on');
+  $('mapView').classList.remove('on');
+  $('cardView').style.display='';
   document.querySelector('.hero').style.display='';
   $('pillsBar').style.display='';
+
+  $('cardView').classList.remove('view-entering');
+  void $('cardView').offsetWidth;
+  $('cardView').classList.add('view-entering');
+
+  window.scrollTo({top:lastScrollY,behavior:'instant'});
 };
+
 $('vMap').onclick=()=>{
+  if($('vMap').classList.contains('on'))return;
+  lastScrollY=window.scrollY;
   $('vMap').classList.add('on');$('vCard').classList.remove('on');
-  $('cardView').style.display='none';$('mapView').classList.add('on');
+  $('cardView').style.display='none';
   document.querySelector('.hero').style.display='none';
   $('pillsBar').style.display='none';
+  $('mapView').classList.add('on');
+
   window.scrollTo(0,0);
-  fit();
-  requestAnimationFrame(fit);
+
+  if(!mapInitialized){
+    mapInitialized=true;
+    fit();
+    requestAnimationFrame(fit);
+  }else{
+    const r=mapbox.getBoundingClientRect();
+    vw=r.width;vh=r.height;
+    msvg.setAttribute('viewBox','0 0 '+vw+' '+vh);
+    apply();
+  }
 };
 if(window.ResizeObserver){
   let t=0;
