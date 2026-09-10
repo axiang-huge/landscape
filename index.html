@@ -21,12 +21,6 @@
 <meta name="twitter:description" content="记录中国境内152处山川旷野与地理坐标，自由探索与发现。">
 <meta name="twitter:image" content="https://axiang-huge.github.io/landscape/og-cover.jpg">
 
-<!-- PWA & 移动端主屏幕 -->
-<link rel="manifest" href="manifest.json">
-<meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-<meta name="apple-mobile-web-app-title" content="山河图鉴">
-<link rel="apple-touch-icon" href="icon-192.png">
 <style>
 :root{
   --ink:#0b0d11; --ink2:#13161d; --ink3:#181c24; --ink4:#1f242e;
@@ -1739,8 +1733,16 @@ function triggerWander(){
 if($('wanderBtn'))$('wanderBtn').onclick=triggerWander;
 if($('zwander'))$('zwander').onclick=triggerWander;
 
-if('serviceWorker' in navigator && location.protocol.startsWith('http')){
-  navigator.serviceWorker.register('sw.js').catch(()=>{});
+// 清理并注销历史 Service Worker 及缓存
+if('serviceWorker' in navigator){
+  navigator.serviceWorker.getRegistrations().then(regs=>{
+    for(const r of regs) r.unregister();
+  }).catch(()=>{});
+  if(window.caches){
+    caches.keys().then(keys=>{
+      for(const k of keys) caches.delete(k);
+    }).catch(()=>{});
+  }
 }
 
 let lastScrollY = 0;
